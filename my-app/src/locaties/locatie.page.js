@@ -1,17 +1,60 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import mapDispatchToProps from '../common/title-dispatch-to-props';
+import LocatiesTable from './locatie.table';
+import HttpService from '../common/http-service';
+import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import {Link} from 'react-router-dom';
+
+let hasFetchedLocatiesEntries = false;
 
 class LocatiePage extends Component {
-    render() {
-        return (
-            <h2>Locatie page</h2>
-        )
+    componentWillMount(){
+        if(!hasFetchedLocatiesEntries){
+            HttpService.getLocaties().then(fetchedEntries => this.props.setEntries(fetchedEntries));
+            hasFetchedLocatiesEntries = true;
+        }
     }
+    delete = (id) => {
+        this.props.deleteEntry(id);
+        HttpService.deleteLocatieById(id);
+    }
+    render() {
+        const fetchedEntries = this.props.locatieEntries;
+        return (
+            <div>
+                <LocatiesTable entries={fetchedEntries} delete={this.delete()}/>
+                <Link to="/locaties/add">
+                    <FloatingActionButton style={{position: 'fixed', right: '15px', bottom: '15px'}}>
+                        <ContentAdd/>
+                    </FloatingActionButton>
+                </Link>
+            </div>
 
+        );
+    }
     componentDidMount() {
         this.props.setTitle('Locaties');
     }
 }
 
-export default connect(undefined, mapDispatchToProps)(LocatiePage)
+const mapStateToProps = (state, ownProps) => {
+    return {
+        locatieEntries: state.locatieEntries,
+    };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        ...mapDispatchToPropsTitle(dispatch, ownProps),
+        setEntries: (entries) => {
+            dispatch({type: 'SET_LOCATIE_ENTIES', payload:entries});
+        },
+        deleteEntry: (id) => {
+            dispatch({type: 'DELETE_LOCATIE_ENTRY', payload:id});
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LocatiePage)
