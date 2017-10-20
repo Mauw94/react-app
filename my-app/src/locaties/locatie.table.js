@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
     Table,
     TableBody,
@@ -12,7 +11,12 @@ import {
 const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn>{props.entry.name}</TableRowColumn>
-        <TableRowColumn><button onClick={() => {props.delete(props.entry.id)}}>Delete</button></TableRowColumn>
+        <TableRowColumn>
+            <button onClick={() => {
+                props.delete(props.entry.id)
+            }}>Delete
+            </button>
+        </TableRowColumn>
     </TableRow>
 )
 

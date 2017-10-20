@@ -7,25 +7,26 @@ import {
 } from 'react-router-dom';
 import LocatiePage from './locaties/locatie.page';
 import DashboardPage from './dashboard/dashboard.page';
-
 import {connect} from 'react-redux';
 
-class Layout extends Component{
-    constructor(){
+class Layout extends Component {
+    constructor() {
         super();
-        this.state = { drawerOpen: false};
+        this.state = {drawerOpen: false};
     }
+
     toggleState = () => {
         const currentState = this.state.drawerOpen;
-        this.setState({drawerOpen:!currentState});
+        this.setState({drawerOpen: !currentState});
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <Router>
                 <div>
                     <AppBar
-                    title={this.props.title}
-                    onLeftIconButtonTouchTap={this.toggleState}/>
+                        title={this.props.title}
+                        onLeftIconButtonTouchTap={this.toggleState}/>
                     <Drawer open={this.state.drawerOpen}>
                         <MenuItem onClick={this.toggleState}>
                             <Link to="/">Dashboard</Link>

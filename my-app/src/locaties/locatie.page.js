@@ -10,8 +10,8 @@ import {Link} from 'react-router-dom';
 let hasFetchedLocatiesEntries = false;
 
 class LocatiePage extends Component {
-    componentWillMount(){
-        if(!hasFetchedLocatiesEntries){
+    componentWillMount() {
+        if (!hasFetchedLocatiesEntries) {
             HttpService.getLocaties().then(fetchedEntries => this.props.setEntries(fetchedEntries));
             hasFetchedLocatiesEntries = true;
         }
@@ -20,20 +20,22 @@ class LocatiePage extends Component {
         this.props.deleteEntry(id);
         HttpService.deleteLocatieById(id);
     }
+
     render() {
         const fetchedEntries = this.props.locatieEntries;
+        console.log(fetchedEntries);
         return (
             <div>
-                <LocatiesTable entries={fetchedEntries} delete={this.delete()}/>
+                <LocatiesTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/locaties/add">
                     <FloatingActionButton style={{position: 'fixed', right: '15px', bottom: '15px'}}>
                         <ContentAdd/>
                     </FloatingActionButton>
                 </Link>
             </div>
-
         );
     }
+
     componentDidMount() {
         this.props.setTitle('Locaties');
     }
@@ -43,16 +45,16 @@ const mapStateToProps = (state, ownProps) => {
     return {
         locatieEntries: state.locatieEntries,
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchToPropsTitle(dispatch, ownProps),
         setEntries: (entries) => {
-            dispatch({type: 'SET_LOCATIE_ENTIES', payload:entries});
+            dispatch({type: 'SET_LOCATIE_ENTIES', payload: entries});
         },
         deleteEntry: (id) => {
-            dispatch({type: 'DELETE_LOCATIE_ENTRY', payload:id});
+            dispatch({type: 'DELETE_LOCATIEENTRY', payload: id});
         }
     }
 }

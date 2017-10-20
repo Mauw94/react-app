@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <MuiThemeProvider>
-                <Layout/>
+                    <Layout/>
                 </MuiThemeProvider>
             </Provider>
         );
