@@ -14,7 +14,7 @@ class LocatieAddPage extends React.Component {
     render(){
         const message = (
             <div>
-                <span>Entry toegevoegd, klik <Link to="/locaties">Hier</Link> om terug te gaan.</span>
+                <span>Entry toegevoegd, klik <Link to="/locaties">HIER</Link> om terug te gaan.</span>
             </div>
         );
         return (
