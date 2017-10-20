@@ -11,7 +11,7 @@ import {
 const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn>{props.entry.naam}</TableRowColumn>
-        <TableRowColumn><button onClick={() => { props.delete(props.entry.id) }}>Verwijderen</button>{props.entry.id}</TableRowColumn>
+        <TableRowColumn><button onClick={() => { props.delete(props.entry.id) }}>Verwijderen met id: {props.entry.id}</button></TableRowColumn>
     </TableRow>
 )
 
