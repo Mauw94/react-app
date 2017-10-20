@@ -28,7 +28,7 @@ class LocatiePage extends Component {
             <div>
                 <LocatiesTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/locaties/add">
-                    <FloatingActionButton style={{position: 'fixed', right: '15px', bottom: '15px'}}>
+                    <FloatingActionButton secondary={true} style={{position: 'fixed', right: '15px', bottom: '15px'}}>
                         <ContentAdd/>
                     </FloatingActionButton>
                 </Link>

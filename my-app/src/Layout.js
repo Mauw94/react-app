@@ -12,6 +12,13 @@ import LocatieAddPage from './locaties/locatie.add.page';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
+const style = {
+    fontWeight: 'bold',
+    backgroundColor: '#fff8c9',
+    color: 'white',
+    fontSize: '24px'
+};
+
 class Layout extends Component {
     constructor() {
         super();
@@ -34,11 +41,11 @@ class Layout extends Component {
                     <Drawer open={this.state.drawerOpen}
                     style={{backgroundColor: '#fff8c9'}}
                     docked={false}>
-                        <MenuItem onClick={this.toggleState} style={{fontWeight: 'bold'}}>
+                        <MenuItem onClick={this.toggleState} style={style}>
                             <ActionHome/>
                             <Link to="/">Dashboard</Link>
                         </MenuItem>
-                        <MenuItem onClick={this.toggleState} style={{fontWeight: 'bold'}}>
+                        <MenuItem onClick={this.toggleState} style={style}>
                             <ActionFlightTakeoff/>
                             <Link to="/locaties">Locaties</Link>
                         </MenuItem>
