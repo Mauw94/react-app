@@ -10,8 +10,8 @@ import {
 
 const Row = (props) => (
     <TableRow key={props.entry.id}>
-        <TableRowColumn>{props.entry.naam}</TableRowColumn>
-        <TableRowColumn><button onClick={() => { props.delete(props.entry.id) }}>Verwijderen met id: {props.entry.id}</button></TableRowColumn>
+        <TableRowColumn style={{fontWeight: 'italic', fontSize: '15px'}}>{props.entry.naam}</TableRowColumn>
+        <TableRowColumn><button className="btn btn-danger" onClick={() => { props.delete(props.entry.id) }}>Verwijderen met id: {props.entry.id}</button></TableRowColumn>
     </TableRow>
 )
 
@@ -23,8 +23,8 @@ const LocatiesTable = (props) => (
     <Table>
         <TableHeader>
             <TableRow>
-                <TableHeaderColumn>Naam</TableHeaderColumn>
-                <TableHeaderColumn>Id</TableHeaderColumn>
+                <TableHeaderColumn style={{fontweight: 'bold', fontSize: '24px'}}>Naam</TableHeaderColumn>
+                <TableHeaderColumn style={{fontweight: 'bold', fontSize: '24px'}}>Id</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

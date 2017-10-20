@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import ActionHome from 'material-ui/svg-icons/action/home';
+import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -27,12 +29,17 @@ class Layout extends Component {
                 <div>
                     <AppBar
                         title={this.props.title}
-                        onLeftIconButtonTouchTap={this.toggleState}/>
-                    <Drawer open={this.state.drawerOpen}>
-                        <MenuItem onClick={this.toggleState}>
+                        onLeftIconButtonTouchTap={this.toggleState}
+                        style={{ backgroundColor: '#f7e122' }}/>
+                    <Drawer open={this.state.drawerOpen}
+                    style={{backgroundColor: '#fff8c9'}}
+                    docked={false}>
+                        <MenuItem onClick={this.toggleState} style={{fontWeight: 'bold'}}>
+                            <ActionHome/>
                             <Link to="/">Dashboard</Link>
                         </MenuItem>
-                        <MenuItem onClick={this.toggleState}>
+                        <MenuItem onClick={this.toggleState} style={{fontWeight: 'bold'}}>
+                            <ActionFlightTakeoff/>
                             <Link to="/locaties">Locaties</Link>
                         </MenuItem>
                     </Drawer>
