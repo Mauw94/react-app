@@ -6,6 +6,7 @@ import {
     BrowserRouter as Router, Route, Link
 } from 'react-router-dom';
 import LocatiePage from './locaties/locatie.page';
+import LocatieAddPage from './locaties/locatie.add.page';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
@@ -37,6 +38,7 @@ class Layout extends Component {
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage}/>
                     <Route exact={true} path="/locaties" component={LocatiePage}/>
+                    <Route path="/locaties/add" component={LocatieAddPage}/>
                 </div>
             </Router>
         );

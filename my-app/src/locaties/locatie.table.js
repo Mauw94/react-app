@@ -10,18 +10,13 @@ import {
 
 const Row = (props) => (
     <TableRow key={props.entry.id}>
-        <TableRowColumn>{props.entry.name}</TableRowColumn>
-        <TableRowColumn>
-            <button onClick={() => {
-                props.delete(props.entry.id)
-            }}>Delete
-            </button>
-        </TableRowColumn>
+        <TableRowColumn>{props.entry.naam}</TableRowColumn>
+        <TableRowColumn><button onClick={() => { props.delete(props.entry.id) }}>Verwijderen</button>{props.entry.id}</TableRowColumn>
     </TableRow>
 )
 
 const Rows = (props) => props.entries.map(e => (
-    <Row entry={e} delete={props.delete}/>
+    <Row entry={e} delete={props.delete} />
 ));
 
 const LocatiesTable = (props) => (
@@ -33,9 +28,10 @@ const LocatiesTable = (props) => (
             </TableRow>
         </TableHeader>
         <TableBody>
-            <Rows entries={props.entries} delete={props.delete}/>
+            <Rows entries={props.entries} delete={props.delete} />
         </TableBody>
     </Table>
 )
+
 
 export default LocatiesTable;

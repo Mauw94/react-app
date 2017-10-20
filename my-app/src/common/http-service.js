@@ -4,15 +4,15 @@ class HttpService {
     baseUrl = 'http://192.168.33.11';
 
     getLocaties(){
-        return axios.get(`${this.baseUrl}/locaties/`).then(l => l.data);
+        return axios.get(`${this.baseUrl}/locaties/`).then(l => {return l.data});
     }
 
     getLocatieById(id){
-        return axios.get(`${this.baseUrl}/locaties/${id}`).then(l => l.data);
+        return axios.get(`${this.baseUrl}/locaties/${id}`).then(l => {return l.data});
     }
 
-    addLocatie(id, naam){
-        return axios.post(`${this.baseUrl}/locaties/`, {id: id, naam: naam});
+    addLocatie(naam){
+        return axios.post(`${this.baseUrl}/locaties/`, {naam: naam});
     }
 
     deleteLocatieById(id){

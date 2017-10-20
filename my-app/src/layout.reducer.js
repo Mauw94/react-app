@@ -9,7 +9,7 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{title: action.payload}};
         case 'SET_LOCATIE_ENTRIES':
             return {...state, ...{locatieEntries: action.payload}};
-        case 'ADD_LOCATIE_ENTRY':
+        case 'ADD_LOCATIEENTRY':
             return {...state, ...{locatieEntries: [...state.locatieEntries, action.payload]}};
         case 'DELETE_LOCATIEENTRY':
             const id = action.payload;
