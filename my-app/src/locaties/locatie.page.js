@@ -23,12 +23,11 @@ class LocatiePage extends Component {
 
     render() {
         const fetchedEntries = this.props.locatieEntries;
-        console.log(fetchedEntries);
         return (
             <div>
                 <LocatiesTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/locaties/add">
-                    <FloatingActionButton secondary={true} style={{position: 'fixed', right: '15px', bottom: '15px'}}>
+                    <FloatingActionButton disabled={true} iconStyle={{fill: 'white'}} style={{position: 'fixed', right: '15px', bottom: '15px'}}>
                         <ContentAdd/>
                     </FloatingActionButton>
                 </Link>

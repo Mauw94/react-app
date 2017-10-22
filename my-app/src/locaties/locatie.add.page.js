@@ -5,6 +5,10 @@ import TextField from 'material-ui/TextField';
 import HttpService from '../common/http-service';
 import {Link} from 'react-router-dom';
 
+const style = {
+    margin: '10px'
+};
+
 class LocatieAddPage extends React.Component {
     constructor() {
         super();
@@ -13,18 +17,24 @@ class LocatieAddPage extends React.Component {
 
     render() {
         const message = (
-            <div style={{margin: '10px'}}>
-                <span>Entry toegevoegd!</span>
+            <div style={{textAlign: 'center', marginTop: '30px'}}>
+                <span>Locatie toegevoegd!</span>
             </div>
         );
         return (
             <div style={{marginTop: '50px'}}>
-                <form onSubmit={this.save}>
-                    <TextField hintText="Naam" name="naam" type="text" style={{margin: '10px'}}/>
+                <form onSubmit={this.save} style={{textAlign: 'center'}}>
+                    <h3 style={{marginBottom: '50px'}}>Nieuwe locatie naam: </h3>
+                    <div className="form-group">
+                        <TextField hintText="Naam" name="naam" type="text" style={style}/>
+                    </div>
                     <button className="btn btn-default" type="submit">Add new locatie</button>
+                    <button className="btn btn-primary" style={style}><Link style={{color: 'white'}}
+                                                                                       to="/locaties">Back</Link>
+                    </button>
+
                 </form>
-                <button className="btn btn-primary" style={{margin: '10px'}}><Link style={{color: 'white'}}
-                                                                                   to="/locaties">Back</Link></button>
+
                 {this.state.showMessage ? message : null}
             </div>
         );

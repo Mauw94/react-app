@@ -11,6 +11,8 @@ import {
 import LocatiePage from './locaties/locatie.page';
 import LocatieAddPage from './locaties/locatie.add.page';
 import ProbleemmeldingPage from './probleemmeldingen/probleemmelding.page';
+import ProbleemmeldingAddPage from './probleemmeldingen/probleemmelding.add';
+import ProbleemmeldingDetailsPage from './probleemmeldingen/probleemmelding.details';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
@@ -59,7 +61,9 @@ class Layout extends Component {
                     <Route exact={true} path="/" component={DashboardPage}/>
                     <Route exact={true} path="/locaties" component={LocatiePage}/>
                     <Route path="/locaties/add" component={LocatieAddPage}/>
-                    <Route path="/problemen" component={ProbleemmeldingPage}/>
+                    <Route exact ={true} path="/problemen" component={ProbleemmeldingPage}/>
+                    <Route path="/problemen/add" component={ProbleemmeldingAddPage}/>
+                    <Route path="/problemen/details/:id/:locatieid" component={ProbleemmeldingDetailsPage}/>
                 </div>
             </Router>
         );

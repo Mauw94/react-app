@@ -1,7 +1,9 @@
 const initialState = {
     title: 'Dashboard',
     locatieEntries: [],
-    probleemEntries: []
+    probleemEntries: [],
+    probleemEntry: '',
+    locatieEntry: '',
 };
 
 const layoutreducer = (state = initialState, action) => {
@@ -10,6 +12,8 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{title: action.payload}};
         case 'SET_LOCATIE_ENTRIES':
             return {...state, ...{locatieEntries: action.payload}};
+        case 'SET_LOCATIE_ENTRY':
+            return {...state, ...{locatieEntry: action.payload}};
         case 'ADD_LOCATIEENTRY':
             return {...state, ...{locatieEntries: [...state.locatieEntries, action.payload]}};
         case 'DELETE_LOCATIEENTRY':
@@ -19,6 +23,8 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{locatieEntries: locatieEntries}};
         case 'SET_PROBLEEMMELDING_ENTRIES':
             return {...state, ...{probleemEntries: action.payload}};
+        case 'SET_PROBLEEMMELDING_ENTRY' :
+            return {...state, ...{probleemEntry: action.payload}};
         case 'ADD_PROBLEEMMELDING_ENTRY':
             return {...state, ...{probleemEntries: [...state.probleemEntries, action.payload]}};
         case 'DELETE_PROBLEEMMELDING_ENTRY':
