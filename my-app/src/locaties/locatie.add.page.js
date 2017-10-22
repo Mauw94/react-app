@@ -26,7 +26,7 @@ class LocatieAddPage extends React.Component {
                 <form onSubmit={this.save} style={{textAlign: 'center'}}>
                     <h3 style={{marginBottom: '50px'}}>Nieuwe locatie naam: </h3>
                     <div className="form-group">
-                        <TextField hintText="Naam" name="naam" type="text" style={style}/>
+                        <TextField hintText="Naam" name="naam" type="text" required style={style}/>
                     </div>
                     <button className="btn btn-default" type="submit">Add new locatie</button>
                     <button className="btn btn-primary" style={style}><Link style={{color: 'white'}}

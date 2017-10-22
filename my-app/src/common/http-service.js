@@ -47,6 +47,22 @@ class HttpService {
     deleteProbleemMelding(id) {
         return axios.delete(`${this.baseUrl}/problemen/${id}`);
     }
+
+    getStatusMeldingen(){
+        return axios.get(`${this.baseUrl}/statussen/`).then(s => {return s.data});
+    }
+
+    addStatusMelding(locatieid, status, datum){
+        return axios.post(`${this.baseUrl}/statussen/`, {
+            locatieid: locatieid,
+            status: status,
+            datum: datum
+        });
+    }
+
+    deleteStatusmelding(id) {
+        return axios.delete(`${this.baseUrl}/statussen/${id}`);
+    }
 }
 
 const httpService = new HttpService();

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
 import ActionExplore from 'material-ui/svg-icons/action/explore';
+import ActionDone from 'material-ui/svg-icons/action/done';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -13,13 +14,14 @@ import LocatieAddPage from './locaties/locatie.add.page';
 import ProbleemmeldingPage from './probleemmeldingen/probleemmelding.page';
 import ProbleemmeldingAddPage from './probleemmeldingen/probleemmelding.add';
 import ProbleemmeldingDetailsPage from './probleemmeldingen/probleemmelding.details';
+import StatusmeldingPage from './statusmeldingen/statusmelding.page';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
 const style = {
     fontWeight: 'bold',
     backgroundColor: '#fff8c9',
-    color: 'white',
+    color: 'black',
     fontSize: '24px'
 };
 
@@ -41,29 +43,42 @@ class Layout extends Component {
                     <AppBar
                         title={this.props.title}
                         onLeftIconButtonTouchTap={this.toggleState}
-                        style={{ backgroundColor: '#f7e122' }}/>
+                        style={{backgroundColor: '#f7e122'}}/>
                     <Drawer open={this.state.drawerOpen}
-                    style={{backgroundColor: '#fff8c9'}}
-                    docked={false}>
-                        <MenuItem onClick={this.toggleState} style={style}>
-                            <ActionHome/>
-                            <Link to="/">Dashboard</Link>
-                        </MenuItem>
-                        <MenuItem onClick={this.toggleState} style={style}>
-                            <ActionFlightTakeoff/>
-                            <Link to="/locaties">Locaties</Link>
-                        </MenuItem>
-                        <MenuItem onClick={this.toggleState} style={style}>
-                            <ActionExplore/>
-                            <Link to="/problemen">Meldingen</Link>
-                        </MenuItem>
+                            style={{backgroundColor: '#fff8c9'}}
+                            docked={false}>
+                        <Link to="/">
+                            <MenuItem onClick={this.toggleState} style={style}>
+                                <ActionHome/>
+                                Dashboard
+                            </MenuItem>
+                        </Link>
+                        <Link to="/locaties">
+                            <MenuItem onClick={this.toggleState} style={style}>
+                                <ActionFlightTakeoff/>
+                                Locaties
+                            </MenuItem>
+                        </Link>
+                        <Link to="/problemen">
+                            <MenuItem onClick={this.toggleState} style={style}>
+                                <ActionExplore/>
+                                Meldingen
+                            </MenuItem>
+                        </Link>
+                        <Link to="/statussen">
+                            <MenuItem onClick={this.toggleState} style={style}>
+                                <ActionDone/>
+                                Statussen
+                            </MenuItem>
+                        </Link>
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage}/>
                     <Route exact={true} path="/locaties" component={LocatiePage}/>
                     <Route path="/locaties/add" component={LocatieAddPage}/>
-                    <Route exact ={true} path="/problemen" component={ProbleemmeldingPage}/>
+                    <Route exact={true} path="/problemen" component={ProbleemmeldingPage}/>
                     <Route path="/problemen/add" component={ProbleemmeldingAddPage}/>
                     <Route path="/problemen/details/:id/:locatieid" component={ProbleemmeldingDetailsPage}/>
+                    <Route path="/statussen" component={StatusmeldingPage}/>
                 </div>
             </Router>
         );

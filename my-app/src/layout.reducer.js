@@ -4,6 +4,7 @@ const initialState = {
     probleemEntries: [],
     probleemEntry: '',
     locatieEntry: '',
+    statusEntries: [],
 };
 
 const layoutreducer = (state = initialState, action) => {
@@ -32,6 +33,10 @@ const layoutreducer = (state = initialState, action) => {
             const entryToDelete = state.probleemEntries.findIndex(e => e.id === probleemId);
             const probleemEntries = [...state.probleemEntries.slice(0, entryToDelete), ...state.probleemEntries.slice(entryToDelete + 1)];
             return {...state, ...{probleemEntries: probleemEntries}};
+        case 'SET_STATUS_ENTRIES' :
+            return {...state, ...{statusEntries: action.payload}};
+        case 'ADD_STATUS_ENTRY':
+            return {...state, ...{statusEnties: [...state.statusEntries, action.payload]}};
         default:
             return state;
     }
