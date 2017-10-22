@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
+import ActionExplore from 'material-ui/svg-icons/action/explore';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -9,6 +10,7 @@ import {
 } from 'react-router-dom';
 import LocatiePage from './locaties/locatie.page';
 import LocatieAddPage from './locaties/locatie.add.page';
+import ProbleemmeldingPage from './probleemmeldingen/probleemmelding.page';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
@@ -49,10 +51,15 @@ class Layout extends Component {
                             <ActionFlightTakeoff/>
                             <Link to="/locaties">Locaties</Link>
                         </MenuItem>
+                        <MenuItem onClick={this.toggleState} style={style}>
+                            <ActionExplore/>
+                            <Link to="/problemen">Meldingen</Link>
+                        </MenuItem>
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage}/>
                     <Route exact={true} path="/locaties" component={LocatiePage}/>
                     <Route path="/locaties/add" component={LocatieAddPage}/>
+                    <Route path="/problemen" component={ProbleemmeldingPage}/>
                 </div>
             </Router>
         );

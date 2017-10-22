@@ -3,20 +3,49 @@ import axios from 'axios';
 class HttpService {
     baseUrl = 'http://192.168.33.11';
 
-    getLocaties(){
-        return axios.get(`${this.baseUrl}/locaties/`).then(l => {return l.data});
+    getLocaties() {
+        return axios.get(`${this.baseUrl}/locaties/`).then(l => {
+            return l.data
+        });
     }
 
-    getLocatieById(id){
-        return axios.get(`${this.baseUrl}/locaties/${id}`).then(l => {return l.data});
+    getLocatieById(id) {
+        return axios.get(`${this.baseUrl}/locaties/${id}`).then(l => {
+            return l.data
+        });
     }
 
-    addLocatie(naam){
+    addLocatie(naam) {
         return axios.post(`${this.baseUrl}/locaties/`, {naam: naam});
     }
 
-    deleteLocatieById(id){
+    deleteLocatieById(id) {
         return axios.delete(`${this.baseUrl}/locaties/${id}`);
+    }
+
+    getProbleemMeldingingen() {
+        return axios.get(`${this.baseUrl}/problemen/`).then(p => {
+            return p.data
+        });
+    }
+
+    getProbleemMeldingById(id) {
+        return axios.get(`${this.baseUrl}/problemen/${id}`).then(p => {
+            return p.data
+        });
+    }
+
+    addProbleemMelding(locatieid, probleem, datum, afgehandeld) {
+        return axios.post(`${this.baseUrl}/problemen/`, {
+            locatieid: locatieid,
+            probleem: probleem,
+            datum: datum,
+            afgehandeld: afgehandeld
+        });
+    }
+
+    deleteProbleemMelding(id) {
+        return axios.delete(`${this.baseUrl}/problemen/${id}`);
     }
 }
 

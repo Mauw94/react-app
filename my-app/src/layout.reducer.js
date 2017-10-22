@@ -1,6 +1,7 @@
 const initialState = {
     title: 'Dashboard',
-    locatieEntries: []
+    locatieEntries: [],
+    probleemEntries: []
 };
 
 const layoutreducer = (state = initialState, action) => {
@@ -15,7 +16,16 @@ const layoutreducer = (state = initialState, action) => {
             const id = action.payload;
             const entryToDeleteIndex = state.locatieEntries.findIndex(e => e.id === id);
             const locatieEntries = [...state.locatieEntries.slice(0, entryToDeleteIndex), ...state.locatieEntries.slice(entryToDeleteIndex + 1)];
-            return { ...state, ...{ locatieEntries: locatieEntries} };
+            return {...state, ...{locatieEntries: locatieEntries}};
+        case 'SET_PROBLEEMMELDING_ENTRIES':
+            return {...state, ...{probleemEntries: action.payload}};
+        case 'ADD_PROBLEEMMELDING_ENTRY':
+            return {...state, ...{probleemEntries: [...state.probleemEntries, action.payload]}};
+        case 'DELETE_PROBLEEMMELDING_ENTRY':
+            const probleemId = action.payload;
+            const entryToDelete = state.probleemEntries.findIndex(e => e.id === probleemId);
+            const probleemEntries = [...state.probleemEntries.slice(0, entryToDelete), ...state.probleemEntries.slice(entryToDelete + 1)];
+            return {...state, ...{probleemEntries: probleemEntries}};
         default:
             return state;
     }
