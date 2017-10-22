@@ -29,7 +29,7 @@ class StatusmeldingPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.setTitle('Statusmeldingen');
+        this.props.setTitle('Status Meldingen');
     }
 }
 

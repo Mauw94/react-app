@@ -27,10 +27,13 @@ class DashboardPage extends Component {
                 <form>
                     <div className={'form-group'} style={{textAlign: 'center', marginTop: '50px'}}>
                         <Link to={'/locaties'}>
-                            <button className={'btn btn-default'}>LOCATIES</button>
+                            <button className={'btn btn-warning'}>LOCATIES</button>
                         </Link>
                         <Link to={'/problemen'}>
-                            <button className={'btn btn-default'}>PROBLEMEN</button>
+                            <button className={'btn btn-danger'}>PROBLEMEN</button>
+                        </Link>
+                        <Link to={'/statussen'}>
+                            <button className={'btn btn-success'}>STATUSSEN</button>
                         </Link>
                     </div>
                 </form>
