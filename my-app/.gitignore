@@ -74,5 +74,4 @@ fabric.properties
 
 .gitignore
 .idea/inspectionProfiles/
-my-app/src/probleemmeldingen/
 npm-debug.log
