@@ -5,15 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Title = () => {
     return (<div className="container-fluid" style={{marginTop: '80px', textAlign: 'center'}}>
-            <h2 className="label label-info" style={{fontSize: '34px'}}>WP2 - ReactApp</h2>
-        </div>
-    );
-}
-
-const InfoText = () => {
-    return (
-        <div style={{textAlign: 'center', marginTop: '15px'}}>
-            <p className="label label-info">Click on the side drawer to choose what you want to do.</p>
+            <h2 className="" style={{fontSize: '34px'}}>WP2 - ReactApp</h2>
         </div>
     );
 }
@@ -23,17 +15,16 @@ class DashboardPage extends Component {
         return (
             <div>
                 <Title/>
-                <InfoText/>
                 <form>
                     <div className={'form-group'} style={{textAlign: 'center', marginTop: '50px'}}>
                         <Link to={'/locaties'}>
-                            <button className={'btn btn-warning'}>LOCATIES</button>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-ripple-effect mdl-button--colored'}>LOCATIES</button>
                         </Link>
                         <Link to={'/problemen'}>
-                            <button className={'btn btn-danger'}>PROBLEMEN</button>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-ripple-effect mdl-button--colored'}>PROBLEMEN</button>
                         </Link>
                         <Link to={'/statussen'}>
-                            <button className={'btn btn-success'}>STATUSSEN</button>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-ripple-effect mdl-button--colored'}>STATUSSEN</button>
                         </Link>
                     </div>
                 </form>

@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import LocatiesTable from './locatie.table';
 import HttpService from '../common/http-service';
 import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
 import {Link} from 'react-router-dom';
 
 let hasFetchedLocatiesEntries = false;
@@ -16,6 +14,7 @@ class LocatiePage extends Component {
             hasFetchedLocatiesEntries = true;
         }
     }
+
     delete = (id) => {
         this.props.deleteEntry(id);
         HttpService.deleteLocatieById(id);
@@ -27,9 +26,11 @@ class LocatiePage extends Component {
             <div>
                 <LocatiesTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/locaties/add">
-                    <FloatingActionButton disabled={true} iconStyle={{fill: 'white'}} style={{position: 'fixed', right: '15px', bottom: '15px'}}>
-                        <ContentAdd/>
-                    </FloatingActionButton>
+                    <button
+                        className={'mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect'}
+                        style={{position: 'fixed', right: '15px', bottom: '15px'}}>
+                        <i className={'material-icons'}>add</i>
+                    </button>
                 </Link>
             </div>
         );

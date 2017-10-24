@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
 import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
-import TextField from 'material-ui/TextField';
 import HttpService from '../common/http-service';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 const style = {
     margin: '10px'
@@ -13,6 +13,7 @@ class LocatieAddPage extends React.Component {
     constructor() {
         super();
         this.state = {showMessage: false};
+        this.state = {redirect: false}
     }
 
     render() {
@@ -24,24 +25,30 @@ class LocatieAddPage extends React.Component {
         return (
             <div style={{marginTop: '50px'}}>
                 <form onSubmit={this.save} style={{textAlign: 'center'}}>
-                    <h3 style={{marginBottom: '50px'}}>Nieuwe locatie naam: </h3>
                     <div className="form-group">
-                        <TextField hintText="Naam" name="naam" type="text" required style={style}/>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample3" name={'naam'}/>
+                                <label class="mdl-textfield__label" for="sample3">Naam</label>
+                        </div>
                     </div>
-                    <button className="btn btn-default" type="submit">Add new locatie</button>
-                    <button className="btn btn-primary" style={style}><Link style={{color: 'white'}}
-                                                                                       to="/locaties">Back</Link>
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
+                        Add new locatie
                     </button>
-
+                    <button className="mdl-button mdl-js-button mdl-js-ripple-effect" style={style}><Link
+                        style={{color: 'black'}}
+                        to="/locaties">Back</Link>
+                    </button>
                 </form>
 
                 {this.state.showMessage ? message : null}
+                {this.state.redirect && (<Redirect to={'/locaties'}/>)}
             </div>
         );
     }
 
     save = (ev) => {
         ev.preventDefault();
+        this.setState({redirect: true})
         const naam = ev.target['naam'].value;
         HttpService.addLocatie(naam).then(() => {
             this.props.addEntry({

@@ -38,7 +38,7 @@ const Rows = (props) => props.entries.map(e => (
 ));
 
 const StatussenTable = (props) => (
-    <Table>
+    <Table className=".table-striped .table-condensed">
         <TableHeader>
             <TableRow>
                 <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>

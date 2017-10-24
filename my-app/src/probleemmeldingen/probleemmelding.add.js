@@ -7,16 +7,27 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import HttpService from '../common/http-service';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 const style = {
     margin: '10px'
 };
 
+let fetched = false;
+
 class ProbleemeldingAddPage extends React.Component {
     constructor() {
         super();
         this.state = {showMessage: false,};
-        this.state = {value: 0,};
+        this.state = {value: null,};
+        this.state = {redirect: false}
+    }
+
+    componentWillMount() {
+        if (!fetched) {
+            HttpService.getLocaties().then(fetchedEntries => this.props.setEntries(fetchedEntries));
+            fetched = true;
+        }
     }
 
     handleChange = (event, index, value) => this.setState({value});
@@ -34,24 +45,33 @@ class ProbleemeldingAddPage extends React.Component {
                         <TextField hintText="Probleem" name="probleem" type="text" style={style} required/>
                         <DatePicker hintText="Datum" name="datum" style={style}
                                     required/>
-                        <SelectField floatingLabelText="Afgehandeld?" value={this.state.value} required
+                        <SelectField floatingLabelText="Afgehandeld?" value={this.state.value}required
                                      onChange={this.handleChange}>
-                            <MenuItem value={0}>Nee</MenuItem>
-                            <MenuItem value={1}>Ja</MenuItem>
+                            <MenuItem value={false} primaryText={'No'} required/>
+                            <MenuItem value={true} primaryText={'Yes'}required/>
                         </SelectField>
                     </div>
-                    <button className="btn btn-default" type="submit" style={style}>Add new probleem</button>
-                    <button className="btn btn-primary" style={style}><Link style={{color: 'white'}}
-                                                                            to="/problemen">Back</Link>
+                    <button
+                        className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                        type="submit" style={style}>Add new probleem
+                    </button>
+                    <button className="mdl-button mdl-js-button'" style={style}><Link style={{color: 'black'}}
+                                                                                      to="/problemen">Back</Link>
                     </button>
                 </form>
                 {this.state.showMessage ? message : null}
+                {this.state.redirect && (<Redirect to={'/problemen'}/>)}
             </div>
-        );
+        )
+    }
+
+    componentDidMount() {
+        this.props.setTitle('Add probleemmelding.');
     }
 
     save = (ev) => {
         ev.preventDefault();
+        this.setState({redirect: true})
         const locatieid = ev.target['locatieid'].value;
         const probleem = ev.target['probleem'].value;
         const datum = ev.target['datum'].value;
@@ -70,10 +90,6 @@ class ProbleemeldingAddPage extends React.Component {
         ev.target['probleem'].value = "";
         ev.target['datum'].value = "";
     }
-
-    componentDidMount() {
-        this.props.setTitle('Add probleem melding');
-    }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -81,6 +97,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         ...mapDispatchPropsToTitle(dispatch, ownProps),
         addEntry: (entry) => {
             dispatch({type: 'ADD_PROBLEEMMELDING_ENTRY', payload: entry});
+        },
+        setEntries: (locaties) => {
+            dispatch({type: 'SET_LOCATIE_ENTRIES', payload: locaties});
         }
     }
 }

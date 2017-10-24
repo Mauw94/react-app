@@ -15,6 +15,7 @@ import ProbleemmeldingPage from './probleemmeldingen/probleemmelding.page';
 import ProbleemmeldingAddPage from './probleemmeldingen/probleemmelding.add';
 import ProbleemmeldingDetailsPage from './probleemmeldingen/probleemmelding.details';
 import StatusmeldingPage from './statusmeldingen/statusmelding.page';
+import LocatiePageDetails from './locaties/locatie.details';
 import DashboardPage from './dashboard/dashboard.page';
 import {connect} from 'react-redux';
 
@@ -43,9 +44,9 @@ class Layout extends Component {
                     <AppBar
                         title={this.props.title}
                         onLeftIconButtonTouchTap={this.toggleState}
-                        style={{backgroundColor: '#f7e122'}}/>
+                        style={{backgroundColor: '#b3d4fc'}}/>
                     <Drawer open={this.state.drawerOpen}
-                            style={{backgroundColor: '#fff8c9'}}
+                            style={{backgroundColor: 'white'}}
                             docked={false}>
                         <Link to="/">
                             <MenuItem onClick={this.toggleState} style={style}>
@@ -77,8 +78,9 @@ class Layout extends Component {
                     <Route path="/locaties/add" component={LocatieAddPage}/>
                     <Route exact={true} path="/problemen" component={ProbleemmeldingPage}/>
                     <Route path="/problemen/add" component={ProbleemmeldingAddPage}/>
-                    <Route path="/problemen/details/:id/:locatieid" component={ProbleemmeldingDetailsPage}/>
+                    <Route exact={true} path="/problemen/details/:id/:locatieid" component={ProbleemmeldingDetailsPage}/>
                     <Route path="/statussen" component={StatusmeldingPage}/>
+                    <Route exact={true} path="/locaties/details/:id" component={LocatiePageDetails}/>
                 </div>
             </Router>
         );
