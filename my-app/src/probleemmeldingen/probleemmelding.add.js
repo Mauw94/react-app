@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import mapDispatchPropsToTitle from '../common/title-dispatch-to-props';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 import HttpService from '../common/http-service';
 import {Link} from 'react-router-dom';
 
@@ -13,8 +15,11 @@ const style = {
 class ProbleemeldingAddPage extends React.Component {
     constructor() {
         super();
-        this.state = {showMessage: false};
+        this.state = {showMessage: false,};
+        this.state = {value: 0,};
     }
+
+    handleChange = (event, index, value) => this.setState({value});
 
     render() {
         const message = (
@@ -27,10 +32,15 @@ class ProbleemeldingAddPage extends React.Component {
                     <div className="form-group">
                         <TextField hintText="Locatie id" name="locatieid" type="text" style={style} required/>
                         <TextField hintText="Probleem" name="probleem" type="text" style={style} required/>
-                        <DatePicker hintText="Datum" name="datum" style={style} errorText={'Please choose a date'} required/>
-                        <TextField hintText={'Afgehandeld? 0:1'} name={'afgehandeld'} type={'number'} required/>
+                        <DatePicker hintText="Datum" name="datum" style={style}
+                                    required/>
+                        <SelectField floatingLabelText="Afgehandeld?" value={this.state.value} required
+                                     onChange={this.handleChange}>
+                            <MenuItem value={0}>Nee</MenuItem>
+                            <MenuItem value={1}>Ja</MenuItem>
+                        </SelectField>
                     </div>
-                                        <button className="btn btn-default" type="submit" style={style}>Add new probleem</button>
+                    <button className="btn btn-default" type="submit" style={style}>Add new probleem</button>
                     <button className="btn btn-primary" style={style}><Link style={{color: 'white'}}
                                                                             to="/problemen">Back</Link>
                     </button>
@@ -45,7 +55,7 @@ class ProbleemeldingAddPage extends React.Component {
         const locatieid = ev.target['locatieid'].value;
         const probleem = ev.target['probleem'].value;
         const datum = ev.target['datum'].value;
-        const afgehandeld = ev.target['afgehandeld'].value;
+        const afgehandeld = this.state.value;
 
         HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld).then(() => {
             this.props.addEntry({
@@ -59,7 +69,6 @@ class ProbleemeldingAddPage extends React.Component {
         ev.target['locatieid'].value = "";
         ev.target['probleem'].value = "";
         ev.target['datum'].value = "";
-        ev.target['afgehandeld'].value = "";
     }
 
     componentDidMount() {
