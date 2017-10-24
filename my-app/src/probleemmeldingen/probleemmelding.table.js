@@ -11,8 +11,11 @@ import {Link} from 'react-router-dom';
 
 const rowStyle = {
     fontWeight: 'italic',
-    fontSize: '12px',
-    paddingLeft: '10px'
+    fontSize: '12px'
+};
+
+const rowStyleMargin = {
+    paddingLeft: '50px'
 };
 
 const headerStyle = {
@@ -23,7 +26,7 @@ const headerStyle = {
 const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn style={rowStyle}>{props.entry.probleem}</TableRowColumn>
-        <TableRowColumn style={rowStyle}>{props.entry.datum}</TableRowColumn>
+        <TableRowColumn style={rowStyleMargin}>{props.entry.afgehandeld}</TableRowColumn>
         <TableRowColumn>
             <button className="btn btn-danger" onClick={() => {
                 props.delete(props.entry.id)
@@ -45,7 +48,7 @@ const ProblemenTable = (props) => (
         <TableHeader>
             <TableRow>
                 <TableHeaderColumn style={headerStyle}>Probleem</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Datum</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Afgehandeld?</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Details</TableHeaderColumn>
             </TableRow>
@@ -55,6 +58,5 @@ const ProblemenTable = (props) => (
         </TableBody>
     </Table>
 )
-
 
 export default ProblemenTable;
