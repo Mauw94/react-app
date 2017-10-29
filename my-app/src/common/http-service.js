@@ -63,6 +63,11 @@ class HttpService {
     deleteStatusmelding(id) {
         return axios.delete(`${this.baseUrl}/statussen/${id}`);
     }
+    getScoreByIdProbleemmelding(id){
+        return axios.get(`${this.baseurl}/scoreprobleem/${id}`).then(p => {
+            return p.data
+        });
+    }
 }
 
 const httpService = new HttpService();
