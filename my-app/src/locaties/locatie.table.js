@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 const style = {
   fontWeight: 'italic',
   fontSize: '15px',
-    paddingLeft: '40px'
+    paddingLeft: '10px'
 };
 
 const styleId = {
@@ -30,9 +30,14 @@ const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn style={style}>{props.entry.naam}</TableRowColumn>
         <TableRowColumn style={styleId}>{props.entry.id}</TableRowColumn>
-        <TableRowColumn style={style}><Link to={'/locatie/details' + props.entry.id}><button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Details
+        <TableRowColumn style={style}><Link to={'/locaties/details/' + props.entry.id}><button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Meldingen
         </button></Link></TableRowColumn>
+        <TableRowColumn style={style}>
+            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'} onClick={() => {
+                props.delete(props.entry.id)
+            }}>Delete?</button>
+        </TableRowColumn>
     </TableRow>
 )
 
@@ -47,6 +52,7 @@ const LocatiesTable = (props) => (
                 <TableHeaderColumn style={headerStyle}>Naam</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Id</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

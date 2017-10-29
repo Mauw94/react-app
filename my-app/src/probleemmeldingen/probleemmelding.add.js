@@ -45,19 +45,21 @@ class ProbleemeldingAddPage extends React.Component {
                         <TextField hintText="Probleem" name="probleem" type="text" style={style} required/>
                         <DatePicker hintText="Datum" name="datum" style={style}
                                     required/>
-                        <SelectField floatingLabelText="Afgehandeld?" value={this.state.value}required
+                        <SelectField floatingLabelText="Afgehandeld?" value={this.state.value} required
                                      onChange={this.handleChange}>
                             <MenuItem value={false} primaryText={'No'} required/>
-                            <MenuItem value={true} primaryText={'Yes'}required/>
+                            <MenuItem value={true} primaryText={'Yes'} required/>
                         </SelectField>
                     </div>
                     <button
                         className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
                         type="submit" style={style}>Add new probleem
                     </button>
-                    <button className="mdl-button mdl-js-button'" style={style}><Link style={{color: 'black'}}
-                                                                                      to="/problemen">Back</Link>
-                    </button>
+                    <Link style={{color: 'black'}}
+                          to="/problemen">
+                        <button className="mdl-button mdl-js-button'" style={style}>Back
+                        </button>
+                    </Link>
                 </form>
                 {this.state.showMessage ? message : null}
                 {this.state.redirect && (<Redirect to={'/problemen'}/>)}

@@ -23,7 +23,7 @@ class ProbleemmeldingPage extends React.Component {
     render() {
         const fetchedEntries = this.props.probleemEntries;
         return (
-            <div>
+            <div style={{margin: '20px'}}>
                 <ProbleemmeldingTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/problemen/add">
                     <button

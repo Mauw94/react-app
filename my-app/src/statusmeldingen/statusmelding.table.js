@@ -25,7 +25,7 @@ const Row = (props) => (
         <TableRowColumn style={rowStyle}>{props.entry.datum}</TableRowColumn>
         <TableRowColumn style={rowStyle}>{props.entry.locatieid}</TableRowColumn>
         <TableRowColumn>
-            <button className="btn btn-danger" onClick={() => {
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={() => {
                 props.delete(props.entry.id)
             }}>Delete?
             </button>
@@ -52,6 +52,5 @@ const StatussenTable = (props) => (
         </TableBody>
     </Table>
 )
-
 
 export default StatussenTable;

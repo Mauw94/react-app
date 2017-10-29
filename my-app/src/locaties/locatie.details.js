@@ -3,45 +3,53 @@ import HttpService from '../common/http-service';
 import {connect} from 'react-redux';
 import mapDispatchTitleToProps from '../common/title-dispatch-to-props';
 import {Link} from 'react-router-dom';
+import ProblemenTablePerLocatie from "../probleemmeldingen/probleemmelding.table.perlocatie";
 
-class LocatiePageDetails extends React.Component{
+let fetched = false;
 
-    constructor(){
-        super();
-        this.state = {redirect:false};
-    }
+class LocatiePageDetails extends React.Component {
 
-    componentWillMount(){
+    componentWillMount() {
         const id = this.props.match.params.id;
-        HttpService.getLocatieById(id).then(fetchedEntry => this.props.setLocatie(fetchedEntry));
+        if (!fetched) {
+            HttpService.getLocatieById(id).then(fetchedEntry => this.props.setLocatie(fetchedEntry));
+            HttpService.getProbleemMeldingByLocatieId(id).then(fetchedProbleemMeldingen => this.props.setProbleemMeldingen(fetchedProbleemMeldingen));
+
+            fetched = true;
+        }
     }
 
-    render(){
+    render() {
         const locatieEntry = this.props.locatieEntry;
-        return (
+        const probleemEntries = this.props.probleemEntries;
 
-          <form>
-              <div className={'form-group'} style={{textAlign: 'center'}}>
-                  <h3>Details of locatie {locatieEntry.naam}</h3>
-                  <p>Naam: {locatieEntry.naam}</p>
-                  <p>Id: {locatieEntry.id}</p>
-                  <Link to={'/locaties'}>
-                      <button className={'mdl-button mdl-js-button'}>Back</button>
-                  </Link>
-                  dsafd
-              </div>
-          </form>
+        fetched = false;
+        return (
+            <form>
+                <div className={'form-group'} style={{textAlign: 'center'}}>
+                    <h4>Probleem meldingen: {locatieEntry.naam}</h4>
+                </div>
+                <div style={{margin: '50px'}}>
+                    <ProblemenTablePerLocatie entries={probleemEntries}/>
+                </div>
+                <div style={{marginLeft: '50px'}}>
+                    <Link to={'/locaties'}>
+                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>Back</button>
+                    </Link>
+                </div>
+            </form>
         );
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.setTitle('Locatie details');
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        locatieEntry: state.locatieEntry
+        locatieEntry: state.locatieEntry,
+        probleemEntries: state.probleemEntries,
     };
 };
 
@@ -49,7 +57,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchTitleToProps(dispatch, ownProps),
         setLocatie: (locatie) => {
-            dispatch({type: 'SET_LOCATIE_ENTRY', payload:locatie});
+            dispatch({type: 'SET_LOCATIE_ENTRY', payload: locatie});
+        },
+        setProbleemMeldingen: (probleemMeldingen) => {
+            dispatch({type: 'SET_PROBLEEMMELDING_ENTRIES', payload: probleemMeldingen});
         }
     }
 }

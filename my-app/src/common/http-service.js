@@ -35,6 +35,12 @@ class HttpService {
         });
     }
 
+    getProbleemMeldingByLocatieId(locatieId) {
+        return axios.get(`${this.baseUrl}/problemen/perlocatie/${locatieId}`).then(p => {
+            return p.data
+        });
+    }
+
     addProbleemMelding(locatieid, probleem, datum, afgehandeld) {
         return axios.post(`${this.baseUrl}/problemen/`, {
             locatieid: locatieid,
@@ -48,11 +54,13 @@ class HttpService {
         return axios.delete(`${this.baseUrl}/problemen/${id}`);
     }
 
-    getStatusMeldingen(){
-        return axios.get(`${this.baseUrl}/statussen/`).then(s => {return s.data});
+    getStatusMeldingen() {
+        return axios.get(`${this.baseUrl}/statussen/`).then(s => {
+            return s.data
+        });
     }
 
-    addStatusMelding(locatieid, status, datum){
+    addStatusMelding(locatieid, status, datum) {
         return axios.post(`${this.baseUrl}/statussen/`, {
             locatieid: locatieid,
             status: status,
