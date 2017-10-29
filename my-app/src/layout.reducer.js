@@ -3,6 +3,7 @@ const initialState = {
     locatieEntries: [],
     probleemEntries: [],
     probleemEntry: '',
+    scoreEntry:'',
     locatieEntry: '',
     statusEntries: [],
 };
@@ -26,6 +27,8 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{probleemEntries: action.payload}};
         case 'SET_PROBLEEMMELDING_ENTRY' :
             return {...state, ...{probleemEntry: action.payload}};
+        case 'SET_SCORE_ENTRY':
+            return{...state,...{scoreEntry:action.payload}};
         case 'ADD_PROBLEEMMELDING_ENTRY':
             return {...state, ...{probleemEntries: [...state.probleemEntries, action.payload]}};
         case 'DELETE_PROBLEEMMELDING_ENTRY':
