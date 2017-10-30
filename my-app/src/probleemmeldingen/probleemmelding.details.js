@@ -21,11 +21,9 @@ class ProbleemmeldingDetailsPage extends React.Component {
             HttpService.getLocatieById(locatieid).then(fetchedLocatie => this.props.setLocatie(fetchedLocatie));
             HttpService.getScoreByIdProbleemmelding(id).then(fetchedScore => this.props.setScore(fetchedScore));
             this.checkAfgehandeld();
-<<<<<<< HEAD
-            this.berekenScore();
+
             fetched = true;
-=======
->>>>>>> e1cece66682473d07b8667aa9893ebe61fc3c23c
+
         }
     }
 
@@ -42,14 +40,12 @@ class ProbleemmeldingDetailsPage extends React.Component {
         const fetchedEntry = this.props.probleemEntry;
         const locatieEntry = this.props.locatieEntry;
         const scoreEntry = this.props.scoreEntry;
-<<<<<<< HEAD
         console.log(scoreEntry);
         console.log('afgehandeld? ' + this.props.probleemEntry.afgehandeld);
         fetched = false;
-=======
 
-        this.score  = parseInt(this.props.scoreEntry.totaleScore)/parseInt(this.props.scoreEntry.aantalScores);
->>>>>>> e1cece66682473d07b8667aa9893ebe61fc3c23c
+        this.score = parseInt(this.props.scoreEntry.totaleScore) / parseInt(this.props.scoreEntry.aantalScores);
+
         return (
             <div>
                 <form>
