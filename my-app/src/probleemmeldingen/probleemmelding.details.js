@@ -21,8 +21,11 @@ class ProbleemmeldingDetailsPage extends React.Component {
             HttpService.getLocatieById(locatieid).then(fetchedLocatie => this.props.setLocatie(fetchedLocatie));
             HttpService.getScoreByIdProbleemmelding(id).then(fetchedScore => this.props.setScore(fetchedScore));
             this.checkAfgehandeld();
+<<<<<<< HEAD
             this.berekenScore();
             fetched = true;
+=======
+>>>>>>> e1cece66682473d07b8667aa9893ebe61fc3c23c
         }
     }
 
@@ -34,18 +37,19 @@ class ProbleemmeldingDetailsPage extends React.Component {
         }
     }
 
-    berekenScore() {
-        console.log("test");
-        this.score = this.props.scoreEntry.totaleScore / this.props.scoreEntry.aantalScores;
-    }
 
     render() {
         const fetchedEntry = this.props.probleemEntry;
         const locatieEntry = this.props.locatieEntry;
         const scoreEntry = this.props.scoreEntry;
+<<<<<<< HEAD
         console.log(scoreEntry);
         console.log('afgehandeld? ' + this.props.probleemEntry.afgehandeld);
         fetched = false;
+=======
+
+        this.score  = parseInt(this.props.scoreEntry.totaleScore)/parseInt(this.props.scoreEntry.aantalScores);
+>>>>>>> e1cece66682473d07b8667aa9893ebe61fc3c23c
         return (
             <div>
                 <form>
@@ -55,6 +59,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
                         <p style={style}><b>Locatie: </b> {locatieEntry.naam}</p>
                         <p style={style}><b>Datum: </b> {fetchedEntry.datum}</p>
                         <p style={style}><b>Afgehandeld: </b> {fetchedEntry.afgehandeld}</p>
+                        <p style={style}><b>Score: </b> {this.score}</p>
                         <Link to={'/problemen'}>
                             <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
                                 Back
