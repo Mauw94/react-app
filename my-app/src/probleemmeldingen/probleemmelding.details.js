@@ -15,17 +15,14 @@ class ProbleemmeldingDetailsPage extends React.Component {
     componentWillMount() {
         const id = this.props.match.params.id;
         const locatieid = this.props.match.params.locatieid;
-        console.log(locatieid);
 
         if (!fetched) {
-            HttpService.getProbleemMeldingById(id).then(fetchedEntry => this.props.setEntry(fetchedEntry));
-            HttpService.getLocatieById(locatieid).then(fetchedLocatie => this.props.setLocatie(fetchedLocatie));
-            fetched = true;
             HttpService.getProbleemMeldingById(id).then(fetchedEntry => this.props.setEntry(fetchedEntry));
             HttpService.getLocatieById(locatieid).then(fetchedLocatie => this.props.setLocatie(fetchedLocatie));
             HttpService.getScoreByIdProbleemmelding(id).then(fetchedScore => this.props.setScore(fetchedScore));
             this.checkAfgehandeld();
             this.berekenScore();
+            fetched = true;
         }
     }
 
@@ -46,9 +43,9 @@ class ProbleemmeldingDetailsPage extends React.Component {
         const fetchedEntry = this.props.probleemEntry;
         const locatieEntry = this.props.locatieEntry;
         const scoreEntry = this.props.scoreEntry;
-
+        console.log(scoreEntry);
         console.log('afgehandeld? ' + this.props.probleemEntry.afgehandeld);
-
+        fetched = false;
         return (
             <div>
                 <form>
