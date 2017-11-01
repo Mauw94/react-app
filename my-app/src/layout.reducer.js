@@ -43,6 +43,11 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{statusEntry: action.payload}};
         case 'ADD_STATUS_ENTRY':
             return {...state, ...{statusEnties: [...state.statusEntries, action.payload]}};
+        case 'DELETE_STATUS_ENTRY':
+            const statusId = action.payload;
+            const statusToDelete = state.statusEntries.findIndex(e => e.id === statusId);
+            const statusEntries = [...state.statusEntries.slice(0, statusToDelete), ...state.statusEntries.slice(statusToDelete + 1)];
+            return {...statusEntries, ...{statusEntries: statusEntries}};
         default:
             return state;
     }

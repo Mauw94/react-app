@@ -69,7 +69,7 @@ class ProbleemeldingAddPage extends React.Component {
         const locatieid = ev.target['locatieid'].value;
         const probleem = ev.target['probleem'].value;
         const datum = ev.target['datum'].value;
-        const afgehandeld = 0;
+        const afgehandeld = this.state.value;
         const updownvote = 0;
 
         HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote).then(() => {
@@ -91,6 +91,13 @@ class ProbleemeldingAddPage extends React.Component {
     }
 }
 
+const mapStateToProps = (state, ownProps) => {
+    return {
+        locatieEntries: state.locatieEntries,
+        probleemEntries: state.probleemEntries,
+    }
+}
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchPropsToTitle(dispatch, ownProps),
@@ -103,4 +110,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-export default connect(undefined, mapDispatchToProps)(ProbleemeldingAddPage)
+export default connect(mapStateToProps, mapDispatchToProps)(ProbleemeldingAddPage)

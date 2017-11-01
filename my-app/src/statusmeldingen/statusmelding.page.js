@@ -44,6 +44,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         ...mapDispatchTitleToProps(dispatch, ownProps),
         setEntries: (entries) => {
             dispatch({type: 'SET_STATUS_ENTRIES', payload: entries});
+        },
+        deleteEntry: (id) => {
+            dispatch({type: 'DELETE_STATUS_ENTRY', payload: id});
         }
     }
 }
