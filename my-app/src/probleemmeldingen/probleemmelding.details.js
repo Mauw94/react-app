@@ -12,6 +12,13 @@ let fetched = false;
 
 class ProbleemmeldingDetailsPage extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     componentWillMount() {
         const id = this.props.match.params.id;
         const locatieid = this.props.match.params.locatieid;
@@ -35,6 +42,28 @@ class ProbleemmeldingDetailsPage extends React.Component {
         }
     }
 
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        if (this.score){
+            this.props.scoreEntry.totaleScore += this.state.value;
+            this.props.scoreEntry.aantalScores +=1;
+            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id),parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
+                alert(this.props.match.params.id+' old ' + this.state.value);
+            });
+
+
+        }else {
+            HttpService.postScore(parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
+                alert(this.props.match.params.id+' new ' + this.state.value);
+            });
+
+        }
+
+        event.preventDefault();
+    }
 
     render() {
         const probleemEntry = this.props.probleemEntry;
@@ -55,12 +84,21 @@ class ProbleemmeldingDetailsPage extends React.Component {
                         <p style={style}><b>Datum: </b> {probleemEntry.datum}</p>
                         <p style={style}><b>Afgehandeld: </b> {probleemEntry.afgehandeld}</p>
                         <p style={style}><b>Score: </b> {this.score}</p>
+                        <p>
+                        </p>
                         <Link to={'/problemen'}>
                             <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
                                 Back
                             </button>
                         </Link>
                     </div>
+                </form>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Score:
+                        <input type="number" min="1" max="5" value={this.state.value} onChange={this.handleChange}/>
+                    </label>
+                    <input type="submit" value="Beoordeel" />
                 </form>
             </div>
         );
