@@ -47,7 +47,7 @@ class LocatieStatusAdd extends React.Component {
                                     required/>
                     </div>
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
-                        Update status
+                        Add status
                     </button>
                     <Link style={{color: 'black'}} to={'/locaties/details/' + this.props.match.params.locatieid}>
                         <button className="mdl-button mdl-js-button mdl-js-ripple-effect">Back

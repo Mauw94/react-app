@@ -21,6 +21,7 @@ class ProbleemeldingAddPage extends React.Component {
         this.state = {showMessage: false,};
         this.state = {value: null,};
         this.state = {redirect: false}
+        this.state = {locatieParam: false}
     }
 
     componentWillMount() {
@@ -33,10 +34,20 @@ class ProbleemeldingAddPage extends React.Component {
     handleChange = (event, index, value) => this.setState({value});
 
     render() {
+        const locatieid = this.props.match.params.locatieid;
+        if (!isNaN(locatieid)) {
+            this.setState({locatieParam: true})
+        }
+        const message = (
+            <div style={{textAlign: 'center', marginTop: '20px'}}>
+                <span>Locatie id is: {locatieid}</span>
+            </div>
+        );
         return (
             <div style={{marginTop: '50px'}}>
                 <form onSubmit={this.save} style={{textAlign: 'center', display: 'inline-block'}}>
                     <h3 style={{marginBottom: '50px'}}>Vul de velden in.</h3>
+                    {this.state.locatieParam ? message : null}
                     <div className="form-group">
                         <TextField hintText="Locatie id" name="locatieid" type="text" style={style} required/>
                         <TextField hintText="Probleem" name="probleem" type="text" style={style} required/>
@@ -53,7 +64,7 @@ class ProbleemeldingAddPage extends React.Component {
                         type="submit" style={style}>Add new probleem
                     </button>
                     <Link style={{color: 'black'}}
-                          to="/problemen">
+                          to="/">
                         <button className="mdl-button mdl-js-button'" style={style}>Back
                         </button>
                     </Link>
