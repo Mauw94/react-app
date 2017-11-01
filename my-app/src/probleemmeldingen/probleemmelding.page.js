@@ -21,6 +21,7 @@ class ProbleemmeldingPage extends React.Component {
     }
 
     render() {
+        fetched = false;
         const fetchedEntries = this.props.probleemEntries;
         return (
             <div style={{margin: '20px'}}>

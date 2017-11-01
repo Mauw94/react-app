@@ -41,12 +41,13 @@ class HttpService {
         });
     }
 
-    addProbleemMelding(locatieid, probleem, datum, afgehandeld) {
+    addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote) {
         return axios.post(`${this.baseUrl}/problemen/`, {
             locatieid: locatieid,
             probleem: probleem,
             datum: datum,
-            afgehandeld: afgehandeld
+            afgehandeld: afgehandeld,
+            updownvote: updownvote,
         });
     }
 

@@ -3,7 +3,7 @@ const initialState = {
     locatieEntries: [],
     probleemEntries: [],
     probleemEntry: '',
-    scoreEntry:'',
+    scoreEntry: '',
     locatieEntry: '',
     statusEntries: [],
     statusEntry: '',
@@ -29,7 +29,7 @@ const layoutreducer = (state = initialState, action) => {
         case 'SET_PROBLEEMMELDING_ENTRY' :
             return {...state, ...{probleemEntry: action.payload}};
         case 'SET_SCORE_ENTRY':
-            return{...state,...{scoreEntry:action.payload}};
+            return {...state, ...{scoreEntry: action.payload}};
         case 'ADD_PROBLEEMMELDING_ENTRY':
             return {...state, ...{probleemEntries: [...state.probleemEntries, action.payload]}};
         case 'DELETE_PROBLEEMMELDING_ENTRY':
@@ -40,7 +40,7 @@ const layoutreducer = (state = initialState, action) => {
         case 'SET_STATUS_ENTRIES' :
             return {...state, ...{statusEntries: action.payload}};
         case 'SET_STATUSMELDING_ENTRY':
-            return{...state, ...{statusEntry: action.payload}};
+            return {...state, ...{statusEntry: action.payload}};
         case 'ADD_STATUS_ENTRY':
             return {...state, ...{statusEnties: [...state.statusEntries, action.payload]}};
         default:

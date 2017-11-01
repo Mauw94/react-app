@@ -40,25 +40,32 @@ class LocatiePageDetails extends React.Component {
                     (if there's no status, please add one.)
                 </div>
                 <div style={{marginLeft: '50px'}}>
-                    <Link to={'/locaties'}>
-                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>Back
-                        </button>
-                    </Link>
-                    <Link to={'/locaties/status/' + locatieEntry.id + '/' + statusEntry.id} style={{margin: '10px'}}>
-                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
-                            Edit status
-                        </button>
-                    </Link>
-                    <Link to={'/locaties/addstatus/' + locatieEntry.id} style={{margin: '10px'}}>
-                        <button className={'mdl-button mdl-js-button mdl-button--raised'}>Add status</button>
-                    </Link>
+                    <div className={'form-group'}>
+                        <Link to={'/locaties'}>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>Back
+                            </button>
+                        </Link>
+                        <Link to={'/locaties/status/' + locatieEntry.id + '/' + statusEntry.id}
+                              style={{margin: '10px'}}>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
+                                Edit status
+                            </button>
+                        </Link>
+                    </div>
+                    <div className={'form-group'}>
+                        <Link to={'/locaties/addstatus/' + locatieEntry.id} >
+                            <button className={'mdl-button mdl-js-button mdl-button--raised'}>Add status</button>
+                        </Link>
+                        <Link to={'/problemen/add'} style={{margin: '10px'}}>
+                            <button className={'mdl-button mdl-js-button mdl-button--raised'}>Add probleem</button>
+                        </Link>
+                    </div>
                 </div>
             </form>
         );
     }
 
-    componentDidMount
-    () {
+    componentDidMount() {
         this.props.setTitle('Locatie details');
     }
 }

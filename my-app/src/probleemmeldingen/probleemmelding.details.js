@@ -40,7 +40,6 @@ class ProbleemmeldingDetailsPage extends React.Component {
         const probleemEntry = this.props.probleemEntry;
         console.log('probleem' + probleemEntry);
         const locatieEntry = this.props.locatieEntry;
-        const scoreEntry = this.props.scoreEntry;
         fetched = false;
 
         this.score = parseInt(this.props.scoreEntry.totaleScore) / parseInt(this.props.scoreEntry.aantalScores);

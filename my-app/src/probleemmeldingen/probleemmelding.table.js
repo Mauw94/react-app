@@ -10,17 +10,18 @@ import {
 import {Link} from 'react-router-dom';
 
 const rowStyle = {
-    fontWeight: 'italic',
-    fontSize: '12px'
+    fontSize: '12px',
+    fontWeight: 'bold',
 };
 
 const rowStyleMargin = {
-    paddingLeft: '50px'
+    paddingLeft: '50px',
+    fontWeight: 'bold',
 };
 
 const headerStyle = {
     fontWeight: 'bold',
-    fontSize: '15px'
+    fontSize: '13px'
 };
 
 const Row = (props) => (
@@ -44,7 +45,7 @@ const Rows = (props) => props.entries.map(e => (
 ));
 
 const ProblemenTable = (props) => (
-    <Table className=".table-striped .table-condensed">
+    <Table>
         <TableHeader>
             <TableRow>
                 <TableHeaderColumn style={headerStyle}>Probleem</TableHeaderColumn>

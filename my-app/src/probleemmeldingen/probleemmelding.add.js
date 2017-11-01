@@ -33,9 +33,6 @@ class ProbleemeldingAddPage extends React.Component {
     handleChange = (event, index, value) => this.setState({value});
 
     render() {
-        const message = (
-            <div style={{textAlign: 'center'}}><span>Entry toegevoegd!</span></div>
-        );
         return (
             <div style={{marginTop: '50px'}}>
                 <form onSubmit={this.save} style={{textAlign: 'center', display: 'inline-block'}}>
@@ -61,14 +58,9 @@ class ProbleemeldingAddPage extends React.Component {
                         </button>
                     </Link>
                 </form>
-                {this.state.showMessage ? message : null}
                 {this.state.redirect && (<Redirect to={'/problemen'}/>)}
             </div>
         )
-    }
-
-    componentDidMount() {
-        this.props.setTitle('Add probleemmelding.');
     }
 
     save = (ev) => {
@@ -77,20 +69,25 @@ class ProbleemeldingAddPage extends React.Component {
         const locatieid = ev.target['locatieid'].value;
         const probleem = ev.target['probleem'].value;
         const datum = ev.target['datum'].value;
-        const afgehandeld = this.state.value;
+        const afgehandeld = 0;
+        const updownvote = 0;
 
-        HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld).then(() => {
+        HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote).then(() => {
             this.props.addEntry({
                 "locatieid": locatieid,
                 "probleem": probleem,
                 "datum": datum,
-                "afgehandeld": afgehandeld
+                "afgehandeld": afgehandeld,
+                "updownvote": updownvote
             });
-            this.setState({showMessage: true})
         });
         ev.target['locatieid'].value = "";
         ev.target['probleem'].value = "";
         ev.target['datum'].value = "";
+    }
+
+    componentDidMount() {
+        this.props.setTitle('Add probleemmelding.');
     }
 }
 
