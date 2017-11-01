@@ -49,7 +49,7 @@ class LocatiePageDetails extends React.Component {
                             Edit status
                         </button>
                     </Link>
-                    <Link to={'/locaties/addstatus'} style={{margin: '10px'}}>
+                    <Link to={'/locaties/addstatus/' + locatieEntry.id} style={{margin: '10px'}}>
                         <button className={'mdl-button mdl-js-button mdl-button--raised'}>Add status</button>
                     </Link>
                 </div>

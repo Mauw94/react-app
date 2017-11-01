@@ -18,6 +18,7 @@ import StatusmeldingPage from './statusmeldingen/statusmelding.page';
 import LocatiePageDetails from './locaties/locatie.details';
 import LocatiePageStatus from './locaties/locatie.statuschange';
 import DashboardPage from './dashboard/dashboard.page';
+import LocatieStatusAdd from './locaties/locatie.status.add';
 import {connect} from 'react-redux';
 
 const style = {
@@ -83,6 +84,7 @@ class Layout extends Component {
                     <Route path="/statussen" component={StatusmeldingPage}/>
                     <Route exact={true} path="/locaties/details/:id" component={LocatiePageDetails}/>
                     <Route exact={true} path="/locaties/status/:locatieid/:statusid" component={LocatiePageStatus}/>
+                    <Route exact={true} path="/locaties/addstatus/:locatieid" component={LocatieStatusAdd}/>
                 </div>
             </Router>
         );

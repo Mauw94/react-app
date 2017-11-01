@@ -37,11 +37,10 @@ class ProbleemmeldingDetailsPage extends React.Component {
 
 
     render() {
-        const fetchedEntry = this.props.probleemEntry;
+        const probleemEntry = this.props.probleemEntry;
+        console.log('probleem' + probleemEntry);
         const locatieEntry = this.props.locatieEntry;
         const scoreEntry = this.props.scoreEntry;
-        console.log(scoreEntry);
-        console.log('afgehandeld? ' + this.props.probleemEntry.afgehandeld);
         fetched = false;
 
         this.score = parseInt(this.props.scoreEntry.totaleScore) / parseInt(this.props.scoreEntry.aantalScores);
@@ -51,10 +50,10 @@ class ProbleemmeldingDetailsPage extends React.Component {
                 <form>
                     <div className={'form-group'}
                          style={{textAlign: 'left', marginTop: '150px', marginLeft: '120px', padding: '15px'}}>
-                        <p style={style}><b>Probleem:</b> {fetchedEntry.probleem}</p>
+                        <p style={style}><b>Probleem:</b> {probleemEntry.probleem}</p>
                         <p style={style}><b>Locatie: </b> {locatieEntry.naam}</p>
-                        <p style={style}><b>Datum: </b> {fetchedEntry.datum}</p>
-                        <p style={style}><b>Afgehandeld: </b> {fetchedEntry.afgehandeld}</p>
+                        <p style={style}><b>Datum: </b> {probleemEntry.datum}</p>
+                        <p style={style}><b>Afgehandeld: </b> {probleemEntry.afgehandeld}</p>
                         <p style={style}><b>Score: </b> {this.score}</p>
                         <Link to={'/problemen'}>
                             <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
