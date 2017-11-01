@@ -6,6 +6,7 @@ const initialState = {
     scoreEntry:'',
     locatieEntry: '',
     statusEntries: [],
+    statusEntry: '',
 };
 
 const layoutreducer = (state = initialState, action) => {
@@ -38,6 +39,8 @@ const layoutreducer = (state = initialState, action) => {
             return {...state, ...{probleemEntries: probleemEntries}};
         case 'SET_STATUS_ENTRIES' :
             return {...state, ...{statusEntries: action.payload}};
+        case 'SET_STATUSMELDING_ENTRY':
+            return{...state, ...{statusEntry: action.payload}};
         case 'ADD_STATUS_ENTRY':
             return {...state, ...{statusEnties: [...state.statusEntries, action.payload]}};
         default:

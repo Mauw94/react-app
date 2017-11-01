@@ -68,11 +68,25 @@ class HttpService {
         });
     }
 
+    updateStatusMelding(locatieid, statusid, status) {
+        return axios.put(`${this.baseUrl}/statussen/`, {
+            locatieid: locatieid,
+            id: statusid,
+            status: status,
+        });
+    }
+
+    getStatusByLocatie(locatieid) {
+        return axios.get(`${this.baseUrl}/statussen/perlocatie/${locatieid}`).then(s => {
+            return s.data
+        });
+    }
+
     deleteStatusmelding(id) {
         return axios.delete(`${this.baseUrl}/statussen/${id}`);
     }
 
-    getScoreByIdProbleemmelding(id){
+    getScoreByIdProbleemmelding(id) {
         return axios.get(`${this.baseUrl}/scoreprobleem/${id}`).then(p => {
             return p.data
         });

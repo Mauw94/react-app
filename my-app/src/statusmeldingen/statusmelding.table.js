@@ -21,8 +21,8 @@ const headerStyle = {
 
 const Row = (props) => (
     <TableRow key={props.entry.id}>
+        <TableRowColumn style={rowStyle}>{props.entry.id}</TableRowColumn>
         <TableRowColumn style={rowStyle}>{props.entry.status}</TableRowColumn>
-        <TableRowColumn style={rowStyle}>{props.entry.datum}</TableRowColumn>
         <TableRowColumn style={rowStyle}>{props.entry.locatieid}</TableRowColumn>
         <TableRowColumn>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={() => {
@@ -41,9 +41,9 @@ const StatussenTable = (props) => (
     <Table className=".table-striped .table-condensed">
         <TableHeader>
             <TableRow>
+                <TableHeaderColumn style={headerStyle}>ID</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Datum</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Locatie id</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>LocatieID</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
             </TableRow>
         </TableHeader>

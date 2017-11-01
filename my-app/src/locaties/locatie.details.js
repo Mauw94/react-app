@@ -14,7 +14,7 @@ class LocatiePageDetails extends React.Component {
         if (!fetched) {
             HttpService.getLocatieById(id).then(fetchedEntry => this.props.setLocatie(fetchedEntry));
             HttpService.getProbleemMeldingByLocatieId(id).then(fetchedProbleemMeldingen => this.props.setProbleemMeldingen(fetchedProbleemMeldingen));
-
+            HttpService.getStatusByLocatie(id).then(fetchedStatus => this.props.setStatusMelding(fetchedStatus));
             fetched = true;
         }
     }
@@ -22,6 +22,7 @@ class LocatiePageDetails extends React.Component {
     render() {
         const locatieEntry = this.props.locatieEntry;
         const probleemEntries = this.props.probleemEntries;
+        const statusEntry = this.props.statusEntry;
 
         fetched = false;
         return (
@@ -32,16 +33,32 @@ class LocatiePageDetails extends React.Component {
                 <div style={{margin: '50px'}}>
                     <ProblemenTablePerLocatie entries={probleemEntries}/>
                 </div>
+                <div style={{margin: '50px'}}>
+                    <b>Status:</b> {statusEntry.status}
+                </div>
+                <div style={{margin: '50px'}}>
+                    (if there's no status, please add one.)
+                </div>
                 <div style={{marginLeft: '50px'}}>
                     <Link to={'/locaties'}>
-                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>Back</button>
+                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>Back
+                        </button>
+                    </Link>
+                    <Link to={'/locaties/status/' + locatieEntry.id + '/' + statusEntry.id} style={{margin: '10px'}}>
+                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
+                            Edit status
+                        </button>
+                    </Link>
+                    <Link to={'/locaties/addstatus'} style={{margin: '10px'}}>
+                        <button className={'mdl-button mdl-js-button mdl-button--raised'}>Add status</button>
                     </Link>
                 </div>
             </form>
         );
     }
 
-    componentDidMount() {
+    componentDidMount
+    () {
         this.props.setTitle('Locatie details');
     }
 }
@@ -50,6 +67,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         locatieEntry: state.locatieEntry,
         probleemEntries: state.probleemEntries,
+        statusEntry: state.statusEntry,
     };
 };
 
@@ -61,6 +79,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         setProbleemMeldingen: (probleemMeldingen) => {
             dispatch({type: 'SET_PROBLEEMMELDING_ENTRIES', payload: probleemMeldingen});
+        },
+        setStatusMelding: (statusMeldingen) => {
+            dispatch({type: 'SET_STATUSMELDING_ENTRY', payload: statusMeldingen});
         }
     }
 }
