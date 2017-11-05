@@ -48,16 +48,16 @@ class ProbleemmeldingDetailsPage extends React.Component {
 
     handleSubmit(event) {
         if (this.score){
-            this.props.scoreEntry.totaleScore += this.state.value;
-            this.props.scoreEntry.aantalScores +=1;
-            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id),parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
-                alert(this.props.match.params.id+' old ' + this.state.value);
+            this.totalescore = parseInt(this.props.scoreEntry.totaleScore)+parseInt(this.state.value);
+            this.aantalscore = parseInt(this.props.scoreEntry.aantalScores)+1;
+            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id),parseInt(this.props.match.params.id), this.totalescore, this.aantalscore).then(() => {
+                alert('Score updated.');
             });
 
 
         }else {
             HttpService.postScore(parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
-                alert(this.props.match.params.id+' new ' + this.state.value);
+                alert('Score created.');
             });
 
         }
