@@ -69,7 +69,7 @@ class ProbleemeldingAddPage extends React.Component {
                         </button>
                     </Link>
                 </form>
-                {this.state.redirect && (<Redirect to={'/problemen'}/>)}
+                {this.state.redirect && (<Redirect to={'/'}/>)}
             </div>
         )
     }

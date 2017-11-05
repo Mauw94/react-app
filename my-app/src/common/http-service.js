@@ -92,7 +92,8 @@ class HttpService {
             return p.data
         });
     }
-    updateScoreById(id,idProbleem,score,aantal){
+
+    updateScoreById(id, idProbleem, score, aantal) {
         return axios.put(`${this.baseUrl}/score/`, {
             id: id,
             idprobleemMelding: idProbleem,
@@ -100,7 +101,8 @@ class HttpService {
             totaleScore: score
         });
     }
-    postScore(idProbleem,score,aantal){
+
+    postScore(idProbleem, score, aantal) {
         return axios.post(`${this.baseUrl}/score/`, {
             id: 0,
             idprobleemMelding: idProbleem,
