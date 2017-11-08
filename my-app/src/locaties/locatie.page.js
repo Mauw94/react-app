@@ -50,8 +50,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchToPropsTitle(dispatch, ownProps),
-        setEntries: (entries) => {
-            dispatch({type: 'SET_LOCATIE_ENTRIES', payload: entries});
+        setEntries: (locaties) => {
+            dispatch({type: 'SET_LOCATIE_ENTRIES', payload: locaties});
         },
         deleteEntry: (id) => {
             dispatch({type: 'DELETE_LOCATIEENTRY', payload: id});

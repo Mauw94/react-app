@@ -19,6 +19,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     componentWillMount() {
         const id = this.props.match.params.id;
         const locatieid = this.props.match.params.locatieid;
@@ -47,15 +48,15 @@ class ProbleemmeldingDetailsPage extends React.Component {
     }
 
     handleSubmit(event) {
-        if (this.score){
-            this.totalescore = parseInt(this.props.scoreEntry.totaleScore)+parseInt(this.state.value);
-            this.aantalscore = parseInt(this.props.scoreEntry.aantalScores)+1;
-            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id),parseInt(this.props.match.params.id), this.totalescore, this.aantalscore).then(() => {
+        if (this.score) {
+            this.totalescore = parseInt(this.props.scoreEntry.totaleScore) + parseInt(this.state.value);
+            this.aantalscore = parseInt(this.props.scoreEntry.aantalScores) + 1;
+            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id), parseInt(this.props.match.params.id), this.totalescore, this.aantalscore).then(() => {
                 alert('Score updated.');
             });
 
 
-        }else {
+        } else {
             HttpService.postScore(parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
                 alert('Score created.');
             });
@@ -93,11 +94,13 @@ class ProbleemmeldingDetailsPage extends React.Component {
                     </div>
                 </form>
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Score:
-                        <input type="number" min="1" max="5" value={this.state.value} onChange={this.handleChange}/>
-                    </label>
-                    <input type="submit" value="Beoordeel" />
+                    <div className={'form-group'} style={{marginLeft: '100px'}}>
+                        <label>
+                            Score:
+                            <input type="number" min="1" max="5" value={this.state.value} onChange={this.handleChange}/>
+                        </label>
+                        <input type="submit" value="Beoordeel"/>
+                    </div>
                 </form>
             </div>
         );

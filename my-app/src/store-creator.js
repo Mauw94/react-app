@@ -9,7 +9,7 @@ const initialState = {
     statusEntry: '',
 };
 
-const layoutreducer = (state = initialState, action) => {
+const storecreator = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_TITLE':
             return {...state, ...{title: action.payload}};
@@ -53,4 +53,4 @@ const layoutreducer = (state = initialState, action) => {
     }
 }
 
-export default layoutreducer;
+export default storecreator;
