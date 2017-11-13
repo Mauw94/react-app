@@ -49,15 +49,15 @@ class ProbleemmeldingDetailsPage extends React.Component {
 
     handleSubmit(event) {
         if (this.score) {
-            this.totalescore = parseInt(this.props.scoreEntry.totaleScore) + parseInt(this.state.value);
-            this.aantalscore = parseInt(this.props.scoreEntry.aantalScores) + 1;
-            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id), parseInt(this.props.match.params.id), this.totalescore, this.aantalscore).then(() => {
+            this.totalescore = parseInt(this.props.scoreEntry.totaleScore, 10) + parseInt(this.state.value, 10);
+            this.aantalscore = parseInt(this.props.scoreEntry.aantalScores, 10) + 1;
+            HttpService.updateScoreById(parseInt(this.props.scoreEntry.id, 10), parseInt(this.props.match.params.id, 10), this.totalescore, this.aantalscore).then(() => {
                 alert('Score updated.');
             });
 
 
         } else {
-            HttpService.postScore(parseInt(this.props.match.params.id), 1, parseInt(this.state.value)).then(() => {
+            HttpService.postScore(parseInt(this.props.match.params.id, 10), 1, parseInt(this.state.value, 10)).then(() => {
                 alert('Score created.');
             });
 
@@ -72,7 +72,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
         const locatieEntry = this.props.locatieEntry;
         fetched = false;
 
-        this.score = parseInt(this.props.scoreEntry.totaleScore) / parseInt(this.props.scoreEntry.aantalScores);
+        this.score = parseInt(this.props.scoreEntry.totaleScore,10) / parseInt(this.props.scoreEntry.aantalScores,10);
 
         return (
             <div>

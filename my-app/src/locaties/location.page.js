@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import LocatiesTable from './locatie.table';
+import LocatiesTable from './location.table';
 import HttpService from '../common/http-service';
 import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
 import {Link} from 'react-router-dom';

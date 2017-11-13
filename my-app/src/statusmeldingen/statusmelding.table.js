@@ -33,8 +33,8 @@ const Row = (props) => (
     </TableRow>
 )
 
-const Rows = (props) => props.entries.map(e => (
-    <Row entry={e} delete={props.delete}/>
+const Rows = (props) => props.entries.map((e,i) => (
+    <Row key={i} entry={e} delete={props.delete}/>
 ));
 
 const StatussenTable = (props) => (

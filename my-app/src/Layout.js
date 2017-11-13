@@ -9,16 +9,16 @@ import MenuItem from 'material-ui/MenuItem';
 import {
     BrowserRouter as Router, Route, Link
 } from 'react-router-dom';
-import LocatiePage from './locaties/locatie.page';
-import LocatieAddPage from './locaties/locatie.add.page';
+import LocatiePage from './locaties/location.page';
+import LocatieAddPage from './locaties/location.add.page';
 import ProbleemmeldingPage from './probleemmeldingen/probleemmelding.page';
 import ProbleemmeldingAddPage from './probleemmeldingen/probleemmelding.add';
 import ProbleemmeldingDetailsPage from './probleemmeldingen/probleemmelding.details';
 import StatusmeldingPage from './statusmeldingen/statusmelding.page';
-import LocatiePageDetails from './locaties/locatie.details';
-import LocatiePageStatus from './locaties/locatie.statuschange';
+import LocatiePageDetails from './locaties/location.details';
+import LocatiePageStatus from './locaties/location.statuschange';
 import DashboardPage from './dashboard/dashboard.page';
-import LocatieStatusAdd from './locaties/locatie.status.add';
+import LocatieStatusAdd from './locaties/location.status.add';
 import {connect} from 'react-redux';
 
 const style = {
