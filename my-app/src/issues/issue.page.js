@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ProbleemmeldingTable from './probleemmelding.table';
+import ProbleemmeldingTable from './issue.table';
 import HttpService from '../common/http-service';
 import mapDispatchTitleToProps from '../common/title-dispatch-to-props';
 import {Link} from 'react-router-dom';
@@ -22,7 +22,7 @@ class ProbleemmeldingPage extends React.Component {
 
     render() {
         fetched = false;
-        const fetchedEntries = this.props.probleemEntries;
+        const fetchedEntries = this.props.issueEntries;
         return (
             <div style={{margin: '20px'}}>
                 <ProbleemmeldingTable entries={fetchedEntries} delete={this.delete}/>
@@ -44,7 +44,7 @@ class ProbleemmeldingPage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        probleemEntries: state.probleemEntries,
+        issueEntries: state.issueEntries,
     };
 };
 

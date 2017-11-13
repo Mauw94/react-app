@@ -29,7 +29,7 @@ class LocatieStatusAdd extends React.Component {
                 <span>Status toegevoegd</span>
             </div>
         );
-        const locatie = this.props.locatieEntry;
+        const locatie = this.props.locationEntry;
         console.log(locatie);
         fetched = false;
         return (
@@ -82,7 +82,7 @@ class LocatieStatusAdd extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        locatieEntry: state.locatieEntry,
+        locationEntry: state.locationEntry,
     };
 };
 

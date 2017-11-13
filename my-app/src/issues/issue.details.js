@@ -36,7 +36,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
     }
 
     checkAfgehandeld() {
-        if (this.props.probleemEntry.afgehandeld === 1) {
+        if (this.props.issueEntry.afgehandeld === 1) {
             this.afgehandeld = 'Ja';
         } else {
             this.afgehandeld = 'Nee'
@@ -67,9 +67,9 @@ class ProbleemmeldingDetailsPage extends React.Component {
     }
 
     render() {
-        const probleemEntry = this.props.probleemEntry;
+        const probleemEntry = this.props.issueEntry;
         console.log('probleem' + probleemEntry);
-        const locatieEntry = this.props.locatieEntry;
+        const locatieEntry = this.props.locationEntry;
         fetched = false;
 
         this.score = parseInt(this.props.scoreEntry.totaleScore,10) / parseInt(this.props.scoreEntry.aantalScores,10);
@@ -114,8 +114,8 @@ class ProbleemmeldingDetailsPage extends React.Component {
 const
     mapStateToProps = (state, ownProps) => {
         return {
-            probleemEntry: state.probleemEntry,
-            locatieEntry: state.locatieEntry,
+            issueEntry: state.issueEntry,
+            locationEntry: state.locationEntry,
             scoreEntry: state.scoreEntry,
         };
     };

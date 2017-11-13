@@ -104,8 +104,8 @@ class ProbleemeldingAddPage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        locatieEntries: state.locatieEntries,
-        probleemEntries: state.probleemEntries,
+        locationEntries: state.locationEntries,
+        issueEntries: state.issueEntries,
     }
 }
 

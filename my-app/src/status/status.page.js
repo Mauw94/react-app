@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import HttpService from '../common/http-service';
 import mapDispatchTitleToProps from '../common/title-dispatch-to-props';
-import StatussenTable from './statusmelding.table';
+import StatussenTable from './status.table';
 
 let hasFetchedEntries = false;
 

@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7280fbe-0b3a-47a8-ba9a-73b3fc293150" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.add.page.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.add.page.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.details.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.details.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.page.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.page.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.status.add.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.status.add.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.statuschange.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.statuschange.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/locatie.table.js" afterPath="$PROJECT_DIR$/my-app/src/locaties/location.table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/package.json" afterPath="$PROJECT_DIR$/my-app/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.add.page.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.add.page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.details.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.details.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.page.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.status.add.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.status.add.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.statuschange.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.statuschange.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/locaties/location.table.js" afterPath="$PROJECT_DIR$/my-app/src/locations/location.table.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.add.js" afterPath="$PROJECT_DIR$/my-app/src/issues/issue.add.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.details.js" afterPath="$PROJECT_DIR$/my-app/src/issues/issue.details.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.page.js" afterPath="$PROJECT_DIR$/my-app/src/issues/issue.page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js" afterPath="$PROJECT_DIR$/my-app/src/issues/issue.table.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.perlocatie.js" afterPath="$PROJECT_DIR$/my-app/src/issues/issue.table.perlocatie.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.page.js" afterPath="$PROJECT_DIR$/my-app/src/status/status.page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js" afterPath="$PROJECT_DIR$/my-app/src/status/status.table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/Layout.js" afterPath="$PROJECT_DIR$/my-app/src/Layout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.details.js" afterPath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.details.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js" afterPath="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js" afterPath="$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app/src/store-creator.js" afterPath="$PROJECT_DIR$/my-app/src/store-creator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,71 +33,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="probleemmelding.details.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.details.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1763">
-              <caret line="136" column="5" lean-forward="false" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="probleemmelding.page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-401">
-              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="probleemmelding.table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="location.table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statusmelding.table.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-167">
-              <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="http-service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/src/common/http-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2037">
               <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/common/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="title-dispatch-to-props.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/common/title-dispatch-to-props.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store-creator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/store-creator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerServiceWorker.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/registerServiceWorker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Layout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/Layout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/node_modules/react-router-dom/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Route.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my-app/node_modules/react-router-dom/Route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,6 +170,7 @@
         <option value="$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js" />
         <option value="$PROJECT_DIR$/my-app/src/locaties/locatie.table.js" />
         <option value="$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js" />
+        <option value="$PROJECT_DIR$/my-app/src/store-creator.js" />
       </list>
     </option>
   </component>
@@ -220,21 +235,35 @@
               <item name="react-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="my-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="locaties" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="react-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="my-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="probleemmeldingen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="react-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="my-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="statusmeldingen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="issues" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="react-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="my-app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="locations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="react-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="my-app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="status" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -296,7 +325,7 @@
       <workItem from="1509877565106" duration="147000" />
       <workItem from="1510307346299" duration="795000" />
       <workItem from="1510327245104" duration="532000" />
-      <workItem from="1510592354319" duration="2188000" />
+      <workItem from="1510592354319" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="Bug fix score update.">
       <created>1509884170643</created>
@@ -305,16 +334,24 @@
       <option name="project" value="LOCAL" />
       <updated>1509884170643</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added mutality check.&#10;Added started refactoring.&#10;Fixed errors.&#10;Fixed warnings.">
+      <created>1510594591477</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1510594591477</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91765000" />
+    <option name="totallyTimeSpent" value="92755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27380952" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -362,7 +399,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bug fix score update." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix score update." />
+    <MESSAGE value="Added mutality check.&#10;Added started refactoring.&#10;Fixed errors.&#10;Fixed warnings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mutality check.&#10;Added started refactoring.&#10;Fixed errors.&#10;Fixed warnings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -371,10 +409,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/api/mockAuthorApi.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/rootReducer.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/locatieReducer.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/initialState.js" />
     <entry file="file://$PROJECT_DIR$/src/components/locaties/LocatieList.js" />
     <entry file="file://$PROJECT_DIR$/src/components/locaties/LocatiePage.js" />
     <entry file="file://$PROJECT_DIR$/src/components/home/HomePage.js" />
@@ -388,13 +422,6 @@
     <entry file="file://$PROJECT_DIR$/src/api/locatieApi.js" />
     <entry file="file://$PROJECT_DIR$/src/index.js" />
     <entry file="file://$PROJECT_DIR$/src/routes.js" />
-    <entry file="file://$PROJECT_DIR$/my-app/src/registerServiceWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -412,13 +439,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-app/node_modules/material-ui/TextField/index.js" />
-    <entry file="file://$PROJECT_DIR$/my-app/src/common/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/public/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -445,31 +465,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/common/title-dispatch-to-props.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -481,31 +480,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.add.page.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.add.page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.perlocatie.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/issues/issue.table.perlocatie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/Layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="81" column="76" lean-forward="false" selection-start-line="81" selection-start-column="76" selection-end-line="81" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.page.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/status/status.page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
           <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
@@ -513,14 +502,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/layout.reducer.js" />
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.page.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.details.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.details.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1060">
           <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
@@ -530,32 +519,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.statuschange.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.statuschange.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.status.add.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.status.add.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.add.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/issues/issue.add.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/common/http-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2037">
-          <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -567,7 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.page.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/issues/issue.page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-401">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
@@ -575,15 +556,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1763">
-          <caret line="136" column="5" lean-forward="false" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/probleemmeldingen/probleemmelding.table.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/issues/issue.table.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="16" />
@@ -591,7 +564,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/locaties/location.table.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/locations/location.table.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
@@ -599,10 +572,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/statusmeldingen/statusmelding.table.js">
+    <entry file="file://$PROJECT_DIR$/my-app/src/status/status.table.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
           <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/issues/issue.details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="88" column="45" lean-forward="false" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/common/http-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/common/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/common/title-dispatch-to-props.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/store-creator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/Layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/node_modules/react-router-dom/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/node_modules/react-router-dom/Route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

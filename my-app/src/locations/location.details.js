@@ -3,7 +3,7 @@ import HttpService from '../common/http-service';
 import {connect} from 'react-redux';
 import mapDispatchTitleToProps from '../common/title-dispatch-to-props';
 import {Link} from 'react-router-dom';
-import ProblemenTablePerLocatie from "../probleemmeldingen/probleemmelding.table.perlocatie";
+import ProblemenTablePerLocatie from "../issues/issue.table.perlocatie";
 
 let fetched = false;
 
@@ -20,8 +20,8 @@ class LocatiePageDetails extends React.Component {
     }
 
     render() {
-        const locatieEntry = this.props.locatieEntry;
-        const probleemEntries = this.props.probleemEntries;
+        const locatieEntry = this.props.locationEntry;
+        const probleemEntries = this.props.issueEntries;
         const statusEntry = this.props.statusEntry;
 
         fetched = false;
@@ -72,8 +72,8 @@ class LocatiePageDetails extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        locatieEntry: state.locatieEntry,
-        probleemEntries: state.probleemEntries,
+        locationEntry: state.locationEntry,
+        issueEntries: state.issueEntries,
         statusEntry: state.statusEntry,
     };
 };

@@ -21,7 +21,7 @@ class LocatiePage extends Component {
     }
 
     render() {
-        const fetchedEntries = this.props.locatieEntries;
+        const fetchedEntries = this.props.locationEntries;
         return (
             <div>
                 <LocatiesTable entries={fetchedEntries} delete={this.delete}/>
@@ -43,7 +43,7 @@ class LocatiePage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        locatieEntries: state.locatieEntries,
+        locationEntries: state.locationEntries,
     };
 };
 
