@@ -19,6 +19,8 @@ const storecreator = (state = initialState, action) => {
             return {...state, ...{locationEntry: action.payload}};
         case 'ADD_LOCATIEENTRY':
             return {...state, ...{locationEntries: [...state.locationEntries, action.payload]}};
+        case 'UPDATE_LOCATIE_ENTRY':
+            return {...state, ...{locationEntry: action.payload}};
         case 'DELETE_LOCATIEENTRY':
             const id = action.payload;
             const entryToDeleteIndex = state.locationEntries.findIndex(e => e.id === id);

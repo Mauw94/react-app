@@ -15,8 +15,12 @@ class StatusmeldingPage extends React.Component {
     }
 
     delete = (id) => {
-        this.props.deleteEntry(id);
-        HttpService.deleteStatusmelding(id);
+        if (window.confirm('Are you sure?')) {
+            this.props.deleteEntry(id);
+            HttpService.deleteStatusmelding(id);
+        } else {
+            return;
+        }
     }
 
     render() {

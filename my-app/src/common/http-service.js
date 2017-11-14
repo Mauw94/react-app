@@ -15,6 +15,10 @@ class HttpService {
         });
     }
 
+    updateLocatieById(id, naam) {
+        return axios.put(`${this.baseUrl}/locaties/`, {id: id, naam: naam});
+    }
+
     addLocatie(naam) {
         return axios.post(`${this.baseUrl}/locaties/`, {naam: naam});
     }

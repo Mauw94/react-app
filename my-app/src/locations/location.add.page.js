@@ -26,9 +26,9 @@ class LocatieAddPage extends React.Component {
             <div style={{marginTop: '50px'}}>
                 <form onSubmit={this.save} style={{textAlign: 'center'}}>
                     <div className="form-group">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="sample3" name={'naam'}/>
-                                <label class="mdl-textfield__label" for="sample3">Naam</label>
+                        <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input className="mdl-textfield__input" type="text" id="sample3" name={'naam'}/>
+                                <label className="mdl-textfield__label">Naam</label>
                         </div>
                     </div>
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">

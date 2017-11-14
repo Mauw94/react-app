@@ -27,7 +27,7 @@ const Row = (props) => (
         <TableRowColumn>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={() => {
                 props.delete(props.entry.id)
-            }}>Delete?
+            }}>Delete
             </button>
         </TableRowColumn>
     </TableRow>

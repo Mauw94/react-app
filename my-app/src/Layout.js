@@ -17,6 +17,7 @@ import ProbleemmeldingDetailsPage from './issues/issue.details';
 import StatusmeldingPage from './status/status.page';
 import LocatiePageDetails from './locations/location.details';
 import LocatiePageStatus from './locations/location.statuschange';
+import LocatieUpdatePage from './locations/location.update.page';
 import DashboardPage from './dashboard/dashboard.page';
 import LocatieStatusAdd from './locations/location.status.add';
 import {connect} from 'react-redux';
@@ -85,6 +86,7 @@ class Layout extends Component {
                     <Route exact={true} path="/locaties/details/:id" component={LocatiePageDetails}/>
                     <Route exact={true} path="/locaties/status/:locatieid/:statusid" component={LocatiePageStatus}/>
                     <Route exact={true} path="/locaties/addstatus/:locatieid" component={LocatieStatusAdd}/>
+                    <Route exact={true} path="/locaties/update/:id" component={LocatieUpdatePage} />
                 </div>
             </Router>
         );

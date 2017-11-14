@@ -8,6 +8,9 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import {Link} from 'react-router-dom';
+import Build from 'material-ui/svg-icons/action/build';
+import Delete from 'material-ui/svg-icons/action/delete';
+import Description from 'material-ui/svg-icons/action/description';
 
 const style = {
     fontWeight: 'italic',
@@ -32,14 +35,22 @@ const Row = (props) => (
         <TableRowColumn style={styleId}>{props.entry.id}</TableRowColumn>
         <TableRowColumn style={style}><Link to={'/locaties/details/' + props.entry.id}>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                Meldingen
+                <Build/>
             </button>
         </Link></TableRowColumn>
         <TableRowColumn style={style}>
             <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'} onClick={() => {
                 props.delete(props.entry.id)
-            }}>Delete?
+            }}>
+                <Delete/>
             </button>
+        </TableRowColumn>
+        <TableRowColumn style={style}>
+            <Link to={'/locaties/update/' + props.entry.id}>
+                <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
+                    <Description/>
+                </button>
+            </Link>
         </TableRowColumn>
     </TableRow>
 )
@@ -56,6 +67,7 @@ const LocatiesTable = (props) => (
                 <TableHeaderColumn style={headerStyle}>Id</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Details</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

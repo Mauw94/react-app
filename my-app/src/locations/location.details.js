@@ -21,9 +21,7 @@ class LocatiePageDetails extends React.Component {
 
     render() {
         const locatieEntry = this.props.locationEntry;
-        console.log(locatieEntry)
         const probleemEntries = this.props.issueEntries;
-        console.log(probleemEntries);
         const statusEntry = this.props.statusEntry;
 
         fetched = false;

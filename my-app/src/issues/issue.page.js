@@ -16,8 +16,12 @@ class ProbleemmeldingPage extends React.Component {
     }
 
     delete = (id) => {
-        this.props.deleteEntry(id);
-        HttpService.deleteProbleemMelding(id);
+        if (window.confirm('Are you sure?')) {
+            this.props.deleteEntry(id);
+            HttpService.deleteProbleemMelding(id);
+        } else {
+            return;
+        }
     }
 
     render() {

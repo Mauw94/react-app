@@ -8,15 +8,15 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import {Link} from 'react-router-dom';
+import Build from 'material-ui/svg-icons/action/build';
+import Delete from 'material-ui/svg-icons/action/delete';
 
 const rowStyle = {
     fontSize: '12px',
-    fontWeight: 'bold',
 };
 
 const rowStyleMargin = {
     paddingLeft: '50px',
-    fontWeight: 'bold',
 };
 
 const headerStyle = {
@@ -29,19 +29,19 @@ const Row = (props) => (
         <TableRowColumn style={rowStyle}>{props.entry.probleem}</TableRowColumn>
         <TableRowColumn style={rowStyleMargin}>{props.entry.afgehandeld}</TableRowColumn>
         <TableRowColumn><Link to={'/problemen/details/' + props.entry.id + '/' + props.entry.locatieid}>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Details</button>
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"><Build/></button>
         </Link></TableRowColumn>
         <TableRowColumn>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={() => {
                 props.delete(props.entry.id)
-            }}>Delete?
+            }}><Delete/>
             </button>
         </TableRowColumn>
     </TableRow>
 )
 
-const Rows = (props) => props.entries.map((e,i) => (
-    <Row key={i} entry={e} delete={props.delete} />
+const Rows = (props) => props.entries.map((e, i) => (
+    <Row key={i} entry={e} delete={props.delete}/>
 ));
 
 const ProblemenTable = (props) => (
