@@ -16,8 +16,12 @@ class LocatiePage extends Component {
     }
 
     delete = (id) => {
-        this.props.deleteEntry(id);
-        HttpService.deleteLocatieById(id);
+        if (window.confirm('Are you sure?')) {
+            this.props.deleteEntry(id);
+            HttpService.deleteLocatieById(id);
+        } else {
+            return;
+        }
     }
 
     render() {

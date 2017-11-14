@@ -31,9 +31,9 @@ const Row = (props) => (
     </TableRow>
 )
 
-const Rows = (props) => props.entries.map(e => (
-    <Row entry={e}/>
-));
+const Rows = (props) => props.entries.map((e,i) => (
+    <Row key={i} entry={e}/>
+))
 
 const ProblemenTablePerLocatie = (props) => (
     <Table className=".table-striped .table-condensed">

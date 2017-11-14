@@ -13,7 +13,7 @@ class LocatiePageDetails extends React.Component {
         const id = this.props.match.params.id;
         if (!fetched) {
             HttpService.getLocatieById(id).then(fetchedEntry => this.props.setLocatie(fetchedEntry));
-            HttpService.getProbleemMeldingByLocatieId(id).then(fetchedProbleemMeldingen => this.props.setProbleemMeldingen(fetchedProbleemMeldingen));
+            HttpService.getProbleemMeldingByLocatieId(id).then(fetchedIssues => this.props.setProbleemMeldingen(fetchedIssues));
             HttpService.getStatusByLocatie(id).then(fetchedStatus => this.props.setStatusMelding(fetchedStatus));
             fetched = true;
         }
@@ -21,7 +21,9 @@ class LocatiePageDetails extends React.Component {
 
     render() {
         const locatieEntry = this.props.locationEntry;
+        console.log(locatieEntry)
         const probleemEntries = this.props.issueEntries;
+        console.log(probleemEntries);
         const statusEntry = this.props.statusEntry;
 
         fetched = false;
@@ -84,8 +86,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         setLocatie: (locatie) => {
             dispatch({type: 'SET_LOCATIE_ENTRY', payload: locatie});
         },
-        setProbleemMeldingen: (probleemMeldingen) => {
-            dispatch({type: 'SET_PROBLEEMMELDING_ENTRIES', payload: probleemMeldingen});
+        setProbleemMeldingen: (issues) => {
+            dispatch({type: 'SET_PROBLEEMMELDING_ENTRIES', payload: issues});
         },
         setStatusMelding: (statusMeldingen) => {
             dispatch({type: 'SET_STATUSMELDING_ENTRY', payload: statusMeldingen});
