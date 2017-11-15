@@ -91,14 +91,16 @@ class ProbleemeldingAddPage extends React.Component {
         const datum = ev.target['datum'].value;
         const afgehandeld = this.state.value;
         const updownvote = this.state.priorityValue;
+        const userid = 0;
 
-        HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote).then(() => {
+        HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote, userid).then(() => {
             this.props.addEntry({
                 "locatieid": locatieid,
                 "probleem": probleem,
                 "datum": datum,
                 "afgehandeld": afgehandeld,
-                "updownvote": updownvote
+                "updownvote": updownvote,
+                "userid": userid
             });
         });
         ev.target['locatieid'].value = "";

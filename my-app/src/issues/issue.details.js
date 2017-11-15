@@ -17,6 +17,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
+        this.state = {showMessage: false}
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -69,6 +70,11 @@ class ProbleemmeldingDetailsPage extends React.Component {
     render() {
         const probleemEntry = this.props.issueEntry;
         const locatieEntry = this.props.locationEntry;
+        const message = (
+            <div style={{textAlign: 'center', marginTop: '30px'}}>
+                <span>Prioriteit aangepast.</span>
+            </div>
+        );
         fetched = false;
         this.score = parseInt(this.props.scoreEntry.totaleScore, 10) / parseInt(this.props.scoreEntry.aantalScores, 10);
 
@@ -111,6 +117,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
                                className={'mdl-button mdl-js-button mdl-button--raised'}/>
                     </div>
                 </form>
+                {this.state.showMessage ? message : null}
             </div>
         );
     }
@@ -126,16 +133,19 @@ class ProbleemmeldingDetailsPage extends React.Component {
         const datum = probleemEntry.datum;
         const afgehandeld = probleemEntry.afgehandeld;
         const priority = this.state.priorityValue;
+        const userid = probleemEntry.userid;
 
-        HttpService.updateProbleemMelding(id, locatieid, probleem, datum, afgehandeld, priority).then(() => {
+        HttpService.updateProbleemMelding(id, locatieid, probleem, datum, afgehandeld, priority, userid).then(() => {
             this.props.updateProblem({
                 "id": id,
                 "locatieid": locatieid,
                 "probleem": probleem,
                 "datum": datum,
                 "afgehandeld": afgehandeld,
-                "updownvote": priority
+                "updownvote": priority,
+                "userid": userid
             });
+            this.setState({showMessage: true})
         });
     }
 

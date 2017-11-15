@@ -45,18 +45,27 @@ class HttpService {
         });
     }
 
-    addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote) {
+    addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote, userid) {
         return axios.post(`${this.baseUrl}/problemen/`, {
             locatieid: locatieid,
             probleem: probleem,
             datum: datum,
             afgehandeld: afgehandeld,
             updownvote: updownvote,
+            userid: userid
         });
     }
 
     updateProbleemMelding(id, locatieid, probleem, datum, afgehandeld, updownvote, userid) {
-        return axios.put(`${this.baseUrl}/problemen/`, {id: id, updownvote: updownvote});
+        return axios.put(`${this.baseUrl}/problemen/`, {
+            id: id,
+            locatieid: locatieid,
+            probleem: probleem,
+            datum: datum,
+            afgehandeld: afgehandeld,
+            updownvote: updownvote,
+            userid: userid
+        });
     }
 
     deleteProbleemMelding(id) {
