@@ -3,6 +3,8 @@ import HttpService from '../common/http-service';
 import {connect} from 'react-redux';
 import mapDispatchTitleToProps from '../common/title-dispatch-to-props';
 import {Link} from 'react-router-dom';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 const style = {
     margin: '10px'
@@ -35,6 +37,8 @@ class ProbleemmeldingDetailsPage extends React.Component {
         }
     }
 
+    handlePriorityChange = (event, index, priorityValue) => this.setState({priorityValue});
+
     checkAfgehandeld() {
         if (this.props.issueEntry.afgehandeld === 1) {
             this.afgehandeld = 'Ja';
@@ -54,29 +58,23 @@ class ProbleemmeldingDetailsPage extends React.Component {
             HttpService.updateScoreById(parseInt(this.props.scoreEntry.id, 10), parseInt(this.props.match.params.id, 10), this.totalescore, this.aantalscore).then(() => {
                 alert('Score updated.');
             });
-
-
         } else {
             HttpService.postScore(parseInt(this.props.match.params.id, 10), 1, parseInt(this.state.value, 10)).then(() => {
                 alert('Score created.');
             });
-
         }
-
         event.preventDefault();
     }
 
     render() {
         const probleemEntry = this.props.issueEntry;
-        console.log('probleem' + probleemEntry);
         const locatieEntry = this.props.locationEntry;
         fetched = false;
-
-        this.score = parseInt(this.props.scoreEntry.totaleScore,10) / parseInt(this.props.scoreEntry.aantalScores,10);
+        this.score = parseInt(this.props.scoreEntry.totaleScore, 10) / parseInt(this.props.scoreEntry.aantalScores, 10);
 
         return (
             <div>
-                <form>
+                <form onSubmit={this.save} style={{textAlign: 'center', display: 'inline-block'}}>
                     <div className={'form-group'}
                          style={{textAlign: 'left', marginTop: '150px', marginLeft: '120px', padding: '15px'}}>
                         <p style={style}><b>Probleem:</b> {probleemEntry.probleem}</p>
@@ -84,26 +82,61 @@ class ProbleemmeldingDetailsPage extends React.Component {
                         <p style={style}><b>Datum: </b> {probleemEntry.datum}</p>
                         <p style={style}><b>Afgehandeld: </b> {probleemEntry.afgehandeld}</p>
                         <p style={style}><b>Score: </b> {this.score}</p>
-                        <p>
-                        </p>
+                        <div>
+                            <p style={style}><b>Priority: </b></p>
+                            <DropDownMenu value={this.state.priorityValue} onChange={this.handlePriorityChange}>
+                                <MenuItem value={'laag'} primaryText="Laag"/>
+                                <MenuItem value={'middelmatig'} primaryText="Middelmatig"/>
+                                <MenuItem value={'hoog'} primaryText="Hoog"/>
+                            </DropDownMenu>
+                        </div>
                         <Link to={'/problemen'}>
                             <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}>
                                 Back
                             </button>
                         </Link>
+                        <button className={'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'}
+                                type="submit" style={{margin: '10px'}}>
+                            Prioriteit aanpassen
+                        </button>
                     </div>
                 </form>
                 <form onSubmit={this.handleSubmit}>
-                    <div className={'form-group'} style={{marginLeft: '100px'}}>
+                    <div className={'form-group'} style={{marginLeft: '130px'}}>
                         <label>
                             Score:
                             <input type="number" min="1" max="5" value={this.state.value} onChange={this.handleChange}/>
                         </label>
-                        <input type="submit" value="Beoordeel"/>
+                        <input type="submit" value="Beoordeel"
+                               className={'mdl-button mdl-js-button mdl-button--raised'}/>
                     </div>
                 </form>
             </div>
         );
+    }
+
+    save = (ev) => {
+        ev.preventDefault();
+        const probleemEntry = this.props.issueEntry;
+
+
+        const id = this.props.match.params.id;
+        const locatieid = probleemEntry.locatieid;
+        const probleem = probleemEntry.probleem;
+        const datum = probleemEntry.datum;
+        const afgehandeld = probleemEntry.afgehandeld;
+        const priority = this.state.priorityValue;
+
+        HttpService.updateProbleemMelding(id, locatieid, probleem, datum, afgehandeld, priority).then(() => {
+            this.props.updateProblem({
+                "id": id,
+                "locatieid": locatieid,
+                "probleem": probleem,
+                "datum": datum,
+                "afgehandeld": afgehandeld,
+                "updownvote": priority
+            });
+        });
     }
 
     componentDidMount() {
@@ -111,30 +144,31 @@ class ProbleemmeldingDetailsPage extends React.Component {
     }
 }
 
-const
-    mapStateToProps = (state, ownProps) => {
-        return {
-            issueEntry: state.issueEntry,
-            locationEntry: state.locationEntry,
-            scoreEntry: state.scoreEntry,
-        };
+const mapStateToProps = (state, ownProps) => {
+    return {
+        issueEntry: state.issueEntry,
+        locationEntry: state.locationEntry,
+        scoreEntry: state.scoreEntry,
     };
+};
 
-const
-    mapDispatchToProps = (dispatch, ownProps) => {
-        return {
-            ...mapDispatchTitleToProps(dispatch, ownProps),
-            setEntry: (entry) => {
-                dispatch({type: 'SET_PROBLEEMMELDING_ENTRY', payload: entry});
-            },
-            setLocatie: (locatie) => {
-                dispatch({type: 'SET_LOCATIE_ENTRY', payload: locatie});
-            },
-            setScore: (score) => {
-                dispatch({type: 'SET_SCORE_ENTRY', payload: score});
-            }
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        ...mapDispatchTitleToProps(dispatch, ownProps),
+        setEntry: (entry) => {
+            dispatch({type: 'SET_PROBLEEMMELDING_ENTRY', payload: entry});
+        },
+        setLocatie: (locatie) => {
+            dispatch({type: 'SET_LOCATIE_ENTRY', payload: locatie});
+        },
+        setScore: (score) => {
+            dispatch({type: 'SET_SCORE_ENTRY', payload: score});
+        },
+        updateProblem: (issue) => {
+            dispatch({type: 'UPDATE_PROBLEEMMELDING_ENTRY', payload: issue})
         }
     }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProbleemmeldingDetailsPage)
 

@@ -14,6 +14,7 @@ import LocatieAddPage from './locations/location.add.page';
 import ProbleemmeldingPage from './issues/issue.page';
 import ProbleemmeldingAddPage from './issues/issue.add';
 import ProbleemmeldingDetailsPage from './issues/issue.details';
+import ProbleemmeldingPriorityPage from './issues/issue.priority';
 import StatusmeldingPage from './status/status.page';
 import LocatiePageDetails from './locations/location.details';
 import LocatiePageStatus from './locations/location.statuschange';
@@ -81,12 +82,14 @@ class Layout extends Component {
                     <Route path="/locaties/add" component={LocatieAddPage}/>
                     <Route exact={true} path="/problemen" component={ProbleemmeldingPage}/>
                     <Route path="/problemen/add" component={ProbleemmeldingAddPage}/>
-                    <Route exact={true} path="/problemen/details/:id/:locatieid" component={ProbleemmeldingDetailsPage}/>
+                    <Route exact={true} path="/problemen/details/:id/:locatieid"
+                           component={ProbleemmeldingDetailsPage}/>
                     <Route path="/statussen" component={StatusmeldingPage}/>
+                    <Route path="/problemen/priority/:id" component={ProbleemmeldingPriorityPage}/>
                     <Route exact={true} path="/locaties/details/:id" component={LocatiePageDetails}/>
                     <Route exact={true} path="/locaties/status/:locatieid/:statusid" component={LocatiePageStatus}/>
                     <Route exact={true} path="/locaties/addstatus/:locatieid" component={LocatieStatusAdd}/>
-                    <Route exact={true} path="/locaties/update/:id" component={LocatieUpdatePage} />
+                    <Route exact={true} path="/locaties/update/:id" component={LocatieUpdatePage}/>
                 </div>
             </Router>
         );

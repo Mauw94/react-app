@@ -34,6 +34,8 @@ const storecreator = (state = initialState, action) => {
             return {...state, ...{scoreEntry: action.payload}};
         case 'ADD_PROBLEEMMELDING_ENTRY':
             return {...state, ...{issueEntries: [...state.issueEntries, action.payload]}};
+        case 'UPDATE_PROBLEEMMELDING_ENTRY':
+            return {...state, ...{issueEntry: action.payload}};
         case 'DELETE_PROBLEEMMELDING_ENTRY':
             const probleemId = action.payload;
             const entryToDelete = state.issueEntries.findIndex(e => e.id === probleemId);

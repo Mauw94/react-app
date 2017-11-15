@@ -67,7 +67,7 @@ const LocatiesTable = (props) => (
                 <TableHeaderColumn style={headerStyle}>Id</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Details</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Update</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

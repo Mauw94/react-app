@@ -8,6 +8,7 @@ import MenuItem from 'material-ui/MenuItem';
 import HttpService from '../common/http-service';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import DropDownMenu from 'material-ui/DropDownMenu';
 
 const style = {
     margin: '10px'
@@ -20,8 +21,9 @@ class ProbleemeldingAddPage extends React.Component {
         super();
         this.state = {showMessage: false,};
         this.state = {value: null,};
-        this.state = {redirect: false}
-        this.state = {locatieParam: false}
+        this.state = {redirect: false};
+        this.state = {locatieParam: false};
+        this.state = {priorityValue: 'laag'};
     }
 
     componentWillMount() {
@@ -32,6 +34,8 @@ class ProbleemeldingAddPage extends React.Component {
     }
 
     handleChange = (event, index, value) => this.setState({value});
+
+    handlePriorityChange = (event, index, priorityValue) => this.setState({priorityValue});
 
     render() {
         const locatieid = this.props.match.params.locatieid;
@@ -58,6 +62,11 @@ class ProbleemeldingAddPage extends React.Component {
                             <MenuItem value={false} primaryText={'No'} required/>
                             <MenuItem value={true} primaryText={'Yes'} required/>
                         </SelectField>
+                        <DropDownMenu value={this.state.priorityValue} onChange={this.handlePriorityChange}>
+                            <MenuItem value={'laag'} primaryText="Laag"/>
+                            <MenuItem value={'middelmatig'} primaryText="Middelmatig"/>
+                            <MenuItem value={'hoog'} primaryText="Hoog"/>
+                        </DropDownMenu>
                     </div>
                     <button
                         className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
@@ -81,7 +90,7 @@ class ProbleemeldingAddPage extends React.Component {
         const probleem = ev.target['probleem'].value;
         const datum = ev.target['datum'].value;
         const afgehandeld = this.state.value;
-        const updownvote = 0;
+        const updownvote = this.state.priorityValue;
 
         HttpService.addProbleemMelding(locatieid, probleem, datum, afgehandeld, updownvote).then(() => {
             this.props.addEntry({
@@ -98,7 +107,7 @@ class ProbleemeldingAddPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.setTitle('Add probleemmelding.');
+        this.props.setTitle('Add probleemmelding');
     }
 }
 

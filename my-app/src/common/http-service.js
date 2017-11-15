@@ -55,6 +55,10 @@ class HttpService {
         });
     }
 
+    updateProbleemMelding(id, locatieid, probleem, datum, afgehandeld, updownvote, userid) {
+        return axios.put(`${this.baseUrl}/problemen/`, {id: id, updownvote: updownvote});
+    }
+
     deleteProbleemMelding(id) {
         return axios.delete(`${this.baseUrl}/problemen/${id}`);
     }
