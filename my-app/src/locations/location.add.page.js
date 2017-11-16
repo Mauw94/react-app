@@ -12,8 +12,7 @@ const style = {
 class LocatieAddPage extends React.Component {
     constructor() {
         super();
-        this.state = {showMessage: false};
-        this.state = {redirect: false}
+        this.state = {showMessage: false,redirect: false};
     }
 
     render() {
