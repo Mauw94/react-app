@@ -28,6 +28,7 @@ const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn style={rowStyle}>{props.entry.probleem}</TableRowColumn>
         <TableRowColumn style={rowStyleMargin}>{props.entry.afgehandeld}</TableRowColumn>
+        <TableRowColumn style={rowStyle}>{props.entry.updownvote}</TableRowColumn>
     </TableRow>
 )
 
@@ -40,7 +41,8 @@ const ProblemenTablePerLocatie = (props) => (
         <TableHeader>
             <TableRow>
                 <TableHeaderColumn style={headerStyle}>Probleem</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Afgehandeld?</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Afgehandeld</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Prioriteit</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

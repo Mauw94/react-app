@@ -12,22 +12,19 @@ import Build from 'material-ui/svg-icons/action/build';
 import Delete from 'material-ui/svg-icons/action/delete';
 
 const rowStyle = {
-    fontSize: '12px',
-};
-
-const rowStyleMargin = {
-    paddingLeft: '50px',
+    fontWeight: 'italic',
+    fontSize: '15px',
+    paddingLeft: '10px'
 };
 
 const headerStyle = {
     fontWeight: 'bold',
-    fontSize: '13px'
+    fontSize: '18px'
 };
 
 const Row = (props) => (
     <TableRow key={props.entry.id}>
         <TableRowColumn style={rowStyle}>{props.entry.probleem}</TableRowColumn>
-        <TableRowColumn style={rowStyleMargin}>{props.entry.afgehandeld}</TableRowColumn>
         <TableRowColumn style={rowStyle}>{props.entry.updownvote}</TableRowColumn>
         <TableRowColumn><Link to={'/problemen/details/' + props.entry.id + '/' + props.entry.locatieid}>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
@@ -46,12 +43,11 @@ const Rows = (props) => props.entries.map((e, i) => (
 ));
 
 const ProblemenTable = (props) => (
-    <Table>
-        <TableHeader>
+    <Table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <TableHeader className={'mdl-data-table__cell--non-numeric'}>
             <TableRow>
                 <TableHeaderColumn style={headerStyle}>Probleem</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Status</TableHeaderColumn>
-                <TableHeaderColumn style={headerStyle}>Priority</TableHeaderColumn>
+                <TableHeaderColumn style={headerStyle}>Priorteit</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Details</TableHeaderColumn>
                 <TableHeaderColumn style={headerStyle}>Delete</TableHeaderColumn>
             </TableRow>
