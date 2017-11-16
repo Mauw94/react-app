@@ -19,15 +19,12 @@ let fetched = false;
 class ProbleemeldingAddPage extends React.Component {
     constructor() {
         super();
-<<<<<<< HEAD
         this.state = {showMessage: false,};
         this.state = {value: null,};
         this.state = {redirect: false};
         this.state = {priorityValue: 'laag'};
         this.state = {location: 'none'}
-=======
         this.state = {showMessage: false,value: null,redirect: false,locatieParam: false,priorityValue: 'laag'};
->>>>>>> 340f5c58b1ea03e4235584e598e892b44e2112b1
     }
 
     componentWillMount() {
