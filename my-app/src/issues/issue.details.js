@@ -16,8 +16,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-        this.state = {showMessage: false}
+        this.state = {showMessage: false, value: '1'};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
