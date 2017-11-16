@@ -28,7 +28,7 @@ class ProbleemmeldingPage extends React.Component {
         fetched = false;
         const fetchedEntries = this.props.issueEntries;
         return (
-            <div style={{margin: '20px'}}>
+            <div>
                 <ProbleemmeldingTable entries={fetchedEntries} delete={this.delete}/>
                 <Link to="/problemen/add">
                     <button

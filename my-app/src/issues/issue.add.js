@@ -19,17 +19,24 @@ let fetched = false;
 class ProbleemeldingAddPage extends React.Component {
     constructor() {
         super();
+        this.state = {showMessage: false,};
+        this.state = {value: null,};
+        this.state = {redirect: false};
+        this.state = {priorityValue: 'laag'};
+        this.state = {location: 'none'}
         this.state = {showMessage: false,value: null,redirect: false,locatieParam: false,priorityValue: 'laag'};
     }
 
     componentWillMount() {
         if (!fetched) {
-            HttpService.getLocaties().then(fetchedEntries => this.props.setEntries(fetchedEntries));
+            HttpService.getLocaties().then(fetchedEntries => this.props.setLocations(fetchedEntries));
             fetched = true;
         }
     }
 
     handleChange = (event, index, value) => this.setState({value});
+
+    handleChangeLocation = (event, index, location) => this.setState({location})
 
     handlePriorityChange = (event, index, priorityValue) => this.setState({priorityValue});
 
@@ -38,16 +45,22 @@ class ProbleemeldingAddPage extends React.Component {
         if (!isNaN(locatieid)) {
             this.setState({locatieParam: true})
         }
-        const message = (
-            <div style={{textAlign: 'center', marginTop: '20px'}}>
-                <span>Locatie id is: {locatieid}</span>
-            </div>
-        );
+
+        const Menus = (props) => props.entries.map((e) => (
+            <MenuItem key={e.id} value={e.id} primaryText={e.naam}/>
+        ));
+
         return (
             <div style={{marginTop: '50px'}}>
                 <form onSubmit={this.save} style={{textAlign: 'center', display: 'inline-block'}}>
                     <h3 style={{marginBottom: '50px'}}>Vul de velden in.</h3>
-                    {this.state.locatieParam ? message : null}
+
+                    <DropDownMenu value={this.state.location} onChange={this.handleChangeLocation}>
+                        <Menus entries={this.props.locationEntries}/>
+                        <MenuItem value={'gent'} primaryText="gent"/>
+                        <MenuItem value={'brussel'} primaryText="brussel"/>
+                    </DropDownMenu>
+
                     <div className="form-group">
                         <TextField hintText="Locatie id" name="locatieid" type="text" style={style} required/>
                         <TextField hintText="Probleem" name="probleem" type="text" style={style} required/>
@@ -122,7 +135,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         addEntry: (entry) => {
             dispatch({type: 'ADD_PROBLEEMMELDING_ENTRY', payload: entry});
         },
-        setEntries: (locaties) => {
+        setLocations: (locaties) => {
             dispatch({type: 'SET_LOCATIE_ENTRIES', payload: locaties});
         }
     }

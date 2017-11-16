@@ -105,7 +105,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
                         <p style={style}><b>Afgehandeld: </b> {probleemEntry.afgehandeld}</p>
                         <p style={style}><b>Score: </b> {this.score}</p>
                         <div>
-                            <p style={style}><b>Priority: </b></p>
+                            <p style={style}><b>Priority: </b>{probleemEntry.updownvote}</p>
                             <DropDownMenu value={this.state.priorityValue} onChange={this.handlePriorityChange}>
                                 <MenuItem value={'laag'} primaryText="Laag"/>
                                 <MenuItem value={'middelmatig'} primaryText="Middelmatig"/>
