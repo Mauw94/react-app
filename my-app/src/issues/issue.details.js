@@ -91,6 +91,7 @@ class ProbleemmeldingDetailsPage extends React.Component {
         this.score = parseInt(scoreEntry.totaleScore, 10) / parseInt(scoreEntry.aantalScores, 10);
         if(isNaN(this.score)){
             this.score = 0;
+            
         }
 
 
