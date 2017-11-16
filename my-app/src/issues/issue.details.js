@@ -52,30 +52,49 @@ class ProbleemmeldingDetailsPage extends React.Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
         if (this.score) {
             this.totalescore = parseInt(this.props.scoreEntry.totaleScore, 10) + parseInt(this.state.value, 10);
             this.aantalscore = parseInt(this.props.scoreEntry.aantalScores, 10) + 1;
             HttpService.updateScoreById(parseInt(this.props.scoreEntry.id, 10), parseInt(this.props.match.params.id, 10), this.totalescore, this.aantalscore).then(() => {
-                alert('Score updated.');
+                HttpService.getScoreByIdProbleemmelding(this.props.match.params.id).then(fetchedScore => {
+                    this.props.setScore(fetchedScore);
+                    alert('Score updated.');
+                });
             });
         } else {
-            HttpService.postScore(parseInt(this.props.match.params.id, 10), 1, parseInt(this.state.value, 10)).then(() => {
-                alert('Score created.');
+            HttpService.postScore(parseInt(this.props.match.params.id, 10), parseInt(this.state.value, 10), 1).then(() => {
+                HttpService.getScoreByIdProbleemmelding(this.props.match.params.id).then(fetchedScore => {
+                    this.props.setScore(fetchedScore);
+                    alert('Score created.');
+                });
+
             });
+
         }
-        event.preventDefault();
+
+        this.score = parseInt(this.props.scoreEntry.totaleScore, 10) / parseInt(this.props.scoreEntry.aantalScores, 10);
+
     }
 
     render() {
         const probleemEntry = this.props.issueEntry;
         const locatieEntry = this.props.locationEntry;
+        const scoreEntry = this.props.scoreEntry;
         const message = (
             <div style={{textAlign: 'center', marginTop: '30px'}}>
                 <span>Prioriteit aangepast.</span>
             </div>
         );
         fetched = false;
-        this.score = parseInt(this.props.scoreEntry.totaleScore, 10) / parseInt(this.props.scoreEntry.aantalScores, 10);
+
+        this.score = parseInt(scoreEntry.totaleScore, 10) / parseInt(scoreEntry.aantalScores, 10);
+        console.log('test '+this.score);
+        if(isNaN(this.score)){
+            this.score = 0;
+            console.log('test '+this.score);
+        }
+
 
         return (
             <div>
